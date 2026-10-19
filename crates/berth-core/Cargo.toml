@@ -13,6 +13,19 @@ directories.workspace = true
 rusqlite.workspace = true
 fd-lock.workspace = true
 tracing.workspace = true
+url.workspace = true
+regex.workspace = true
+semver.workspace = true
+tokio.workspace = true
+reqwest.workspace = true
+scraper.workspace = true
+quick-xml.workspace = true
+sha2.workspace = true
+hex.workspace = true
+chrono.workspace = true
+once_cell.workspace = true
+async-trait = "0.1.92"
 
 [dev-dependencies]
 tempfile.workspace = true
+async-trait = "0.1"
