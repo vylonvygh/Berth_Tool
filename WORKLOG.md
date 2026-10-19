@@ -68,3 +68,19 @@ Result: fmt OK; clippy OK; tests OK (17 passed total). Branch feat/phase-1-skele
 Commit: bf09299
 Noticed: tracing-appender cannot do size-capped rotation (time-only); implemented size-capped writer in berth-core. rustfmt+clippy absent in base system, installed. MSRV 1.82 pinned (unverifiable on older toolchains). Sandbox dirs cleaned up.
 Next: approval before Phase 2 (URL/source parsing, Provider trait, GitHub web backend with fixtures)
+
+### 2026-10-19 08:50 | feat/phase-1-skeleton | AI: opencode/big-pickle
+Intent: Await approval to begin Phase 2.
+Result: fmt/clippy/tests all green. 17 unit tests pass. Branch feat/phase-1-skeleton. Previous commits bf09299, 8fdc91c. No sandbox dirs remain.
+Commit: 8fdc91c
+Noticed: waiting for user approval per workflow.
+Next: Phase 2: workspace additions for url/source parsing, Provider trait, GitHub web backend with fixtures, docs update.
+
+### 2026-10-19 08:52 | feat/phase-2-providers | AI: opencode/big-pickle
+Intent: Phase 2 — URL/source parsing, Provider trait, and GitHub web backend (with fixture-driven tests).
+Plan: add dependencies (url, regex, semver, tokio, reqwest, scraper, quick-xml, sha2, hex, chrono); add core types (RepoRef/Source, Version, Asset, Digest, Release); implement input parsing (forms in §4.1), Provider trait, and GitHub web client + parsers (latest via redirect, atom via quick-xml, expanded_assets via scraper).
+Actions: began adding dependencies and types.
+Result: in progress
+Commit: none yet
+Noticed: SPEC lists regex and semver in §14; all required crates appear in the approved stack. Will use url crate for parsing.
+Next: write type definitions and source parsing.
