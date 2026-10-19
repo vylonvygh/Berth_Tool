@@ -1,0 +1,504 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xml:lang="en-US">
+  <id>tag:github.com,2008:https://github.com/junegunn/fzf/releases</id>
+  <link type="text/html" rel="alternate" href="https://github.com/junegunn/fzf/releases"/>
+  <link type="application/atom+xml" rel="self" href="https://github.com/junegunn/fzf/releases.atom"/>
+  <title>Release notes from fzf</title>
+  <updated>2026-10-11T02:35:56Z</updated>
+  <entry>
+    <id>tag:github.com,2008:Repository/13807606/v0.74.5</id>
+    <updated>2026-10-11T02:39:32Z</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/junegunn/fzf/releases/tag/v0.74.5"/>
+    <title>0.74.5</title>
+    <content type="html">&lt;ul&gt;
+&lt;li&gt;Fixed &lt;code&gt;--popup&lt;/code&gt; unzooming the window when opened over a zoomed pane on tmux 3.8 or above (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;5689642151&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/junegunn/fzf/issues/4927&quot; data-hovercard-type=&quot;issue&quot; data-hovercard-url=&quot;/junegunn/fzf/issues/4927/hovercard&quot; href=&quot;https://github.com/junegunn/fzf/issues/4927&quot;&gt;#4927&lt;/a&gt;, &lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;5578155271&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/junegunn/fzf.vim/issues/1625&quot; data-hovercard-type=&quot;issue&quot; data-hovercard-url=&quot;/junegunn/fzf.vim/issues/1625/hovercard&quot; href=&quot;https://github.com/junegunn/fzf.vim/issues/1625&quot;&gt;junegunn/fzf.vim#1625&lt;/a&gt;) (&lt;a class=&quot;user-mention notranslate&quot; data-hovercard-type=&quot;user&quot; data-hovercard-url=&quot;/users/jereviikari/hovercard&quot; data-octo-click=&quot;hovercard-link-click&quot; data-octo-dimensions=&quot;link_type:self&quot; href=&quot;https://github.com/jereviikari&quot;&gt;@jereviikari&lt;/a&gt;)
+&lt;ul&gt;
+&lt;li&gt;On tmux 3.7, the window is still unzoomed, as tmux 3.7b crashes when a floating pane is created over a zoomed window&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Fixed &lt;code&gt;--gap-line&lt;/code&gt; cutting a grapheme cluster when filling the last cells of the line (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;5433584721&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/junegunn/fzf/issues/4920&quot; data-hovercard-type=&quot;issue&quot; data-hovercard-url=&quot;/junegunn/fzf/issues/4920/hovercard&quot; href=&quot;https://github.com/junegunn/fzf/issues/4920&quot;&gt;#4920&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Fixed an escape sequence fzf does not recognize being partly consumed, which leaked the rest into the query (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;5602421970&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/junegunn/fzf/issues/4926&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/junegunn/fzf/pull/4926/hovercard&quot; href=&quot;https://github.com/junegunn/fzf/pull/4926&quot;&gt;#4926&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Fixed a key lost when it arrived in the same read as an escape sequence&lt;/li&gt;
+&lt;li&gt;Fixed &lt;code&gt;focus&lt;/code&gt; event not triggered after &lt;code&gt;reload&lt;/code&gt; when the new item is at the same position as the previous one (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;10988891&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/junegunn/fzf/discussions/4930&quot; data-hovercard-type=&quot;discussion&quot; data-hovercard-url=&quot;/junegunn/fzf/discussions/4930/hovercard&quot; href=&quot;https://github.com/junegunn/fzf/discussions/4930&quot;&gt;#4930&lt;/a&gt;)
+&lt;ul&gt;
+&lt;li&gt;With &lt;code&gt;--id-nth&lt;/code&gt;, the event is not triggered if the focus moves directly from an item to another item with the same key&lt;/li&gt;
+&lt;li&gt;A &lt;code&gt;focus&lt;/code&gt; binding that runs &lt;code&gt;reload&lt;/code&gt; now triggers itself again after each reload, unless &lt;code&gt;--id-nth&lt;/code&gt; is set and the key does not change&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Security fixes
+&lt;ul&gt;
+&lt;li&gt;fzf-tmux no longer evaluates an attached layout size (e.g. &lt;code&gt;-l50&lt;/code&gt;) via bash arithmetic, which could run commands or inject tmux flags (&lt;a title=&quot;GHSA-w6x2-f5m4-xw82&quot; href=&quot;https://github.com/junegunn/fzf/security/advisories/GHSA-w6x2-f5m4-xw82&quot;&gt;GHSA-w6x2-f5m4-xw82&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;zsh completion now creates its FIFO in a private &lt;code&gt;mktemp -d&lt;/code&gt; directory instead of a predictable &lt;code&gt;/tmp&lt;/code&gt; path (&lt;a title=&quot;GHSA-7rj6-7pqx-v7rm&quot; href=&quot;https://github.com/junegunn/fzf/security/advisories/GHSA-7rj6-7pqx-v7rm&quot;&gt;GHSA-7rj6-7pqx-v7rm&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Reported by Sai Sreewathsa Kovalluri, Shon Babu, and Kannan K (Researchers) of Innspark Solutions&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</content>
+    <author>
+      <name>junegunn</name>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/700826?s=60&amp;v=4"/>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Repository/13807606/v0.74.4</id>
+    <updated>2026-09-12T00:32:28Z</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/junegunn/fzf/releases/tag/v0.74.4"/>
+    <title>0.74.4</title>
+    <content type="html">&lt;h3&gt;Demo: Non-blocking fzf vim plugin on tmux floating pane&lt;/h3&gt;
+&lt;details open=&quot;&quot; class=&quot;details-reset border rounded-2&quot;&gt;
+  &lt;summary class=&quot;tmp-px-3 py-2&quot;&gt;
+    &lt;svg aria-hidden=&quot;true&quot; data-component=&quot;Octicon&quot; height=&quot;16&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; data-view-component=&quot;true&quot; class=&quot;octicon octicon-device-camera-video&quot;&gt;
+    &lt;path d=&quot;M16 3.75v8.5a.75.75 0 0 1-1.136.643L11 10.575v.675A1.75 1.75 0 0 1 9.25 13h-7.5A1.75 1.75 0 0 1 0 11.25v-6.5C0 3.784.784 3 1.75 3h7.5c.966 0 1.75.784 1.75 1.75v.675l3.864-2.318A.75.75 0 0 1 16 3.75Zm-6.5 1a.25.25 0 0 0-.25-.25h-7.5a.25.25 0 0 0-.25.25v6.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-6.5ZM11 8.825l3.5 2.1v-5.85l-3.5 2.1Z&quot;&gt;&lt;/path&gt;
+&lt;/svg&gt;
+    &lt;span class=&quot;m-1&quot;&gt;fzf-vim-show.mp4&lt;/span&gt;
+    &lt;span class=&quot;dropdown-caret&quot;&gt;&lt;/span&gt;
+  &lt;/summary&gt;
+
+  &lt;video src=&quot;https://private-user-images.githubusercontent.com/700826/650624462-77f3e303-e230-4669-ae05-08a19fa84ea3.mp4?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3OTIzOTgxMDQsIm5iZiI6MTc5MjM5NzgwNCwicGF0aCI6Ii83MDA4MjYvNjUwNjI0NDYyLTc3ZjNlMzAzLWUyMzAtNDY2OS1hZTA1LTA4YTE5ZmE4NGVhMy5tcDQ_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYxMDE5JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MTAxOVQwODE2NDRaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT00N2Q3MWJhOWIyOTI4MGIyY2E5OWIyMDZiMGZjM2FmZTk3ODQzMzhhZTliYWJiZTE1ZjlkZjljMzQ5YjY2OGI3JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZyZXNwb25zZS1jb250ZW50LXR5cGU9dmlkZW8lMkZtcDQifQ.Ew5aiYFobG2_FYgRTwR9Ch86Z0B4KZIysmFZnrzw9_Y&quot; data-canonical-src=&quot;https://private-user-images.githubusercontent.com/700826/650624462-77f3e303-e230-4669-ae05-08a19fa84ea3.mp4?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3OTIzOTgxMDQsIm5iZiI6MTc5MjM5NzgwNCwicGF0aCI6Ii83MDA4MjYvNjUwNjI0NDYyLTc3ZjNlMzAzLWUyMzAtNDY2OS1hZTA1LTA4YTE5ZmE4NGVhMy5tcDQ_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYxMDE5JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MTAxOVQwODE2NDRaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT00N2Q3MWJhOWIyOTI4MGIyY2E5OWIyMDZiMGZjM2FmZTk3ODQzMzhhZTliYWJiZTE1ZjlkZjljMzQ5YjY2OGI3JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZyZXNwb25zZS1jb250ZW50LXR5cGU9dmlkZW8lMkZtcDQifQ.Ew5aiYFobG2_FYgRTwR9Ch86Z0B4KZIysmFZnrzw9_Y&quot; controls=&quot;controls&quot; muted=&quot;muted&quot; class=&quot;d-block rounded-bottom-2 border-top width-fit&quot; style=&quot;max-height:640px; min-height: 200px&quot;&gt;
+
+  &lt;/video&gt;
+&lt;/details&gt;
+
+&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;Fixed an escape sequence split across reads being parsed as a fragment, which leaked the rest into the query (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;5212106041&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/junegunn/fzf/issues/4899&quot; data-hovercard-type=&quot;issue&quot; data-hovercard-url=&quot;/junegunn/fzf/issues/4899/hovercard&quot; href=&quot;https://github.com/junegunn/fzf/issues/4899&quot;&gt;#4899&lt;/a&gt;)
+&lt;ul&gt;
+&lt;li&gt;e.g. A terminal answering the startup &lt;code&gt;DECRQM&lt;/code&gt; query late left &lt;code&gt;?2004;2$y&lt;/code&gt;, CTRL-UP left &lt;code&gt;5A&lt;/code&gt;, and SGR mouse input left &lt;code&gt;0;1;1M&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Fixed &lt;code&gt;--tiebreak=pathname&lt;/code&gt; not detecting the last path separator when the line contains a non-ASCII character before it (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;5280972974&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/junegunn/fzf/issues/4902&quot; data-hovercard-type=&quot;issue&quot; data-hovercard-url=&quot;/junegunn/fzf/issues/4902/hovercard&quot; href=&quot;https://github.com/junegunn/fzf/issues/4902&quot;&gt;#4902&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Fixed &lt;code&gt;progress&lt;/code&gt; in the &lt;code&gt;--listen&lt;/code&gt; status payload staying at 100 while a new search was running, which made a snapshot with a new query and the previous result set look complete (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;5308984326&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/junegunn/fzf/issues/4903&quot; data-hovercard-type=&quot;issue&quot; data-hovercard-url=&quot;/junegunn/fzf/issues/4903/hovercard&quot; href=&quot;https://github.com/junegunn/fzf/issues/4903&quot;&gt;#4903&lt;/a&gt;)
+&lt;ul&gt;
+&lt;li&gt;It is now reset when a search starts and reaches 100 on the final result, so &lt;code&gt;progress&lt;/code&gt; of 100 means the matches belong to the query reported next to them&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Fixed adaptive height not reserving a line for the divider of an inline header or footer border, so the list came up one line short for each of them (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;5326611504&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/junegunn/fzf/issues/4904&quot; data-hovercard-type=&quot;issue&quot; data-hovercard-url=&quot;/junegunn/fzf/issues/4904/hovercard&quot; href=&quot;https://github.com/junegunn/fzf/issues/4904&quot;&gt;#4904&lt;/a&gt;)
+&lt;ul&gt;
+&lt;li&gt;e.g. &lt;code&gt;seq 10 | fzf --height=~100% --list-border --header-lines=1 --header-lines-border=inline&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Fixed fzf erasing the line the prompt was on when it exits, which made the last line of the prompt flicker in fish, bash, and nushell (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;5385364868&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/junegunn/fzf/issues/4913&quot; data-hovercard-type=&quot;issue&quot; data-hovercard-url=&quot;/junegunn/fzf/issues/4913/hovercard&quot; href=&quot;https://github.com/junegunn/fzf/issues/4913&quot;&gt;#4913&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Fixed fzf exiting with status 2 while waiting for a key, when &lt;code&gt;--listen&lt;/code&gt; is used and 100+ signals interrupt the wait (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;5396148131&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/junegunn/fzf/issues/4917&quot; data-hovercard-type=&quot;issue&quot; data-hovercard-url=&quot;/junegunn/fzf/issues/4917/hovercard&quot; href=&quot;https://github.com/junegunn/fzf/issues/4917&quot;&gt;#4917&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Vim plugin
+&lt;ul&gt;
+&lt;li&gt;fzf no longer blocks the editor, so live previews keep working while fzf is open
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;fzf#run&lt;/code&gt; returns an empty list when it runs fzf asynchronously. Use &lt;code&gt;sink&lt;/code&gt;, &lt;code&gt;sinklist&lt;/code&gt;, or &lt;code&gt;exit&lt;/code&gt; to get the result&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;The popup layout now works under Zellij&lt;/li&gt;
+&lt;li&gt;Added &lt;code&gt;popup&lt;/code&gt; as a synonym of the &lt;code&gt;tmux&lt;/code&gt; layout key
+&lt;div class=&quot;highlight highlight-source-viml notranslate position-relative overflow-auto&quot; data-snippet-clipboard-copy-content=&quot;let g:fzf_layout = { &#39;popup&#39;: &#39;90%,70%&#39; }&quot;&gt;&lt;pre&gt;&lt;span class=&quot;pl-k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;pl-smi&quot;&gt;&lt;span class=&quot;pl-k&quot;&gt;g:&lt;/span&gt;fzf_layout&lt;/span&gt; &lt;span class=&quot;pl-k&quot;&gt;=&lt;/span&gt; { &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&#39;&lt;/span&gt;popup&lt;span class=&quot;pl-pds&quot;&gt;&#39;&lt;/span&gt;&lt;/span&gt;: &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&#39;&lt;/span&gt;90%,70%&lt;span class=&quot;pl-pds&quot;&gt;&#39;&lt;/span&gt;&lt;/span&gt; }&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;fzf now opens in a tmux or Zellij floating pane by default, so the window it was started from stays visible and can be used while fzf is running
+&lt;ul&gt;
+&lt;li&gt;Requires tmux 3.7+ or Zellij 0.44+&lt;/li&gt;
+&lt;li&gt;Set &lt;code&gt;g:fzf_layout&lt;/code&gt; to pick a different layout&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;fish
+&lt;ul&gt;
+&lt;li&gt;Fixed custom CTRL-T command not using the prefixed target directory in some cases (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;3338813328&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/junegunn/fzf/issues/4498&quot; data-hovercard-type=&quot;issue&quot; data-hovercard-url=&quot;/junegunn/fzf/issues/4498/hovercard&quot; href=&quot;https://github.com/junegunn/fzf/issues/4498&quot;&gt;#4498&lt;/a&gt;) (&lt;a class=&quot;user-mention notranslate&quot; data-hovercard-type=&quot;user&quot; data-hovercard-url=&quot;/users/bitraid/hovercard&quot; data-octo-click=&quot;hovercard-link-click&quot; data-octo-dimensions=&quot;link_type:self&quot; href=&quot;https://github.com/bitraid&quot;&gt;@bitraid&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Optimized description alignment of completion items (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;5367447178&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/junegunn/fzf/issues/4910&quot; data-hovercard-type=&quot;issue&quot; data-hovercard-url=&quot;/junegunn/fzf/issues/4910/hovercard&quot; href=&quot;https://github.com/junegunn/fzf/issues/4910&quot;&gt;#4910&lt;/a&gt;) (&lt;a class=&quot;user-mention notranslate&quot; data-hovercard-type=&quot;user&quot; data-hovercard-url=&quot;/users/bitraid/hovercard&quot; data-octo-click=&quot;hovercard-link-click&quot; data-octo-dimensions=&quot;link_type:self&quot; href=&quot;https://github.com/bitraid&quot;&gt;@bitraid&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;nushell
+&lt;ul&gt;
+&lt;li&gt;Added key bindings for Helix editing modes, on nushell 0.115.0 or above (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;5389024281&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/junegunn/fzf/issues/4914&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/junegunn/fzf/pull/4914/hovercard&quot; href=&quot;https://github.com/junegunn/fzf/pull/4914&quot;&gt;#4914&lt;/a&gt;) (&lt;a class=&quot;user-mention notranslate&quot; data-hovercard-type=&quot;user&quot; data-hovercard-url=&quot;/users/sim590/hovercard&quot; data-octo-click=&quot;hovercard-link-click&quot; data-octo-dimensions=&quot;link_type:self&quot; href=&quot;https://github.com/sim590&quot;&gt;@sim590&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Fixed CTRL-T inserting the selected paths unquoted
+&lt;ul&gt;
+&lt;li&gt;p4p3r (&lt;a class=&quot;user-mention notranslate&quot; data-hovercard-type=&quot;user&quot; data-hovercard-url=&quot;/users/P4P3R-HAK/hovercard&quot; data-octo-click=&quot;hovercard-link-click&quot; data-octo-dimensions=&quot;link_type:self&quot; href=&quot;https://github.com/P4P3R-HAK&quot;&gt;@P4P3R-HAK&lt;/a&gt;) reported the security vulnerability and suggested the fix&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</content>
+    <author>
+      <name>junegunn</name>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/700826?s=60&amp;v=4"/>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Repository/13807606/v0.74.3</id>
+    <updated>2026-08-17T03:10:34Z</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/junegunn/fzf/releases/tag/v0.74.3"/>
+    <title>0.74.3</title>
+    <content type="html">&lt;ul&gt;
+&lt;li&gt;Performance optimizations for non-ASCII input
+&lt;ul&gt;
+&lt;li&gt;ASCII queries are up to 16x faster&lt;/li&gt;
+&lt;li&gt;Non-ASCII queries are up to 12x faster&lt;/li&gt;
+&lt;li&gt;Reading accented Latin input is up to 37% faster&lt;/li&gt;
+&lt;li&gt;Reading CJK input reduces memory use by up to 29%&lt;/li&gt;
+&lt;li&gt;ASCII input is unaffected&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Fixed an image from a preview command being torn apart when its rows are separated by IND instead of newlines, as &lt;code&gt;chafa&lt;/code&gt; does under tmux (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;5046119501&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/junegunn/fzf/issues/4885&quot; data-hovercard-type=&quot;issue&quot; data-hovercard-url=&quot;/junegunn/fzf/issues/4885/hovercard&quot; href=&quot;https://github.com/junegunn/fzf/issues/4885&quot;&gt;#4885&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Fixed &lt;code&gt;replace-query&lt;/code&gt; corrupting the item text when the query is edited afterwards&lt;/li&gt;
+&lt;li&gt;fzf no longer turns bracketed paste mode off on exit when the terminal already had it on, which broke pasting in shells that run fzf from a line editor widget (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;5051277982&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/junegunn/fzf/issues/4887&quot; data-hovercard-type=&quot;issue&quot; data-hovercard-url=&quot;/junegunn/fzf/issues/4887/hovercard&quot; href=&quot;https://github.com/junegunn/fzf/issues/4887&quot;&gt;#4887&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Fixed startup blocking on terminals that never answer escape sequences, such as FreeBSD virtual terminals. fzf waited for a reply until a key was pressed, then dropped that keystroke (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;1289031766&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/junegunn/fzf/issues/2860&quot; data-hovercard-type=&quot;issue&quot; data-hovercard-url=&quot;/junegunn/fzf/issues/2860/hovercard&quot; href=&quot;https://github.com/junegunn/fzf/issues/2860&quot;&gt;#2860&lt;/a&gt;, &lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;243280479&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/junegunn/fzf/issues/976&quot; data-hovercard-type=&quot;issue&quot; data-hovercard-url=&quot;/junegunn/fzf/issues/976/hovercard&quot; href=&quot;https://github.com/junegunn/fzf/issues/976&quot;&gt;#976&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;</content>
+    <author>
+      <name>junegunn</name>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/700826?s=60&amp;v=4"/>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Repository/13807606/v0.74.2</id>
+    <updated>2026-08-01T00:17:03Z</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/junegunn/fzf/releases/tag/v0.74.2"/>
+    <title>0.74.2</title>
+    <content type="html">&lt;ul&gt;
+&lt;li&gt;Performance optimizations for short queries
+&lt;ul&gt;
+&lt;li&gt;Short queries scan the largest candidate sets, and the first keystroke scans the whole input&lt;/li&gt;
+&lt;li&gt;Single-character queries are up to 2.4x faster&lt;/li&gt;
+&lt;li&gt;Two-character queries are up to 1.4x faster&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Faster sorting of search results, skipping redundant radix passes&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;change-border-label&lt;/code&gt; and &lt;code&gt;transform-border-label&lt;/code&gt; now work on the native border of a tmux or Zellij floating pane&lt;/li&gt;
+&lt;li&gt;Fixed Kitty graphics sequences from a preview command being taken by tmux as pane title requests&lt;/li&gt;
+&lt;li&gt;Fixed an image at the top of the preview being torn by &lt;code&gt;--preview-window ~N&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Fixed nondeterministic match highlight positions&lt;/li&gt;
+&lt;li&gt;Fixed signal and resize handlers persisting after &lt;code&gt;Run()&lt;/code&gt; returns when fzf is used as a library&lt;/li&gt;
+&lt;li&gt;fzf now detects terminal resize on Windows in &lt;code&gt;--height&lt;/code&gt; mode (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;4367159252&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/junegunn/fzf/issues/4790&quot; data-hovercard-type=&quot;issue&quot; data-hovercard-url=&quot;/junegunn/fzf/issues/4790/hovercard&quot; href=&quot;https://github.com/junegunn/fzf/issues/4790&quot;&gt;#4790&lt;/a&gt;) (&lt;a class=&quot;user-mention notranslate&quot; data-hovercard-type=&quot;user&quot; data-hovercard-url=&quot;/users/Cyrus580529/hovercard&quot; data-octo-click=&quot;hovercard-link-click&quot; data-octo-dimensions=&quot;link_type:self&quot; href=&quot;https://github.com/Cyrus580529&quot;&gt;@Cyrus580529&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;fish: fixed history command being affected by user initialization scripts, and improved timestamp colors in CTRL-R (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;4920072223&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/junegunn/fzf/issues/4862&quot; data-hovercard-type=&quot;issue&quot; data-hovercard-url=&quot;/junegunn/fzf/issues/4862/hovercard&quot; href=&quot;https://github.com/junegunn/fzf/issues/4862&quot;&gt;#4862&lt;/a&gt;) (&lt;a class=&quot;user-mention notranslate&quot; data-hovercard-type=&quot;user&quot; data-hovercard-url=&quot;/users/bitraid/hovercard&quot; data-octo-click=&quot;hovercard-link-click&quot; data-octo-dimensions=&quot;link_type:self&quot; href=&quot;https://github.com/bitraid&quot;&gt;@bitraid&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;zsh: fixed CTRL-R not propagating the exit status of fzf when perl is available (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;4981492257&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/junegunn/fzf/issues/4871&quot; data-hovercard-type=&quot;issue&quot; data-hovercard-url=&quot;/junegunn/fzf/issues/4871/hovercard&quot; href=&quot;https://github.com/junegunn/fzf/issues/4871&quot;&gt;#4871&lt;/a&gt;) (&lt;a class=&quot;user-mention notranslate&quot; data-hovercard-type=&quot;user&quot; data-hovercard-url=&quot;/users/LangLangBart/hovercard&quot; data-octo-click=&quot;hovercard-link-click&quot; data-octo-dimensions=&quot;link_type:self&quot; href=&quot;https://github.com/LangLangBart&quot;&gt;@LangLangBart&lt;/a&gt;, &lt;a class=&quot;user-mention notranslate&quot; data-hovercard-type=&quot;user&quot; data-hovercard-url=&quot;/users/Toliak/hovercard&quot; data-octo-click=&quot;hovercard-link-click&quot; data-octo-dimensions=&quot;link_type:self&quot; href=&quot;https://github.com/Toliak&quot;&gt;@Toliak&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;zsh: fixed &lt;code&gt;chpwd&lt;/code&gt; hook functions being called twice by ALT-C (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;5016739506&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/junegunn/fzf/issues/4879&quot; data-hovercard-type=&quot;issue&quot; data-hovercard-url=&quot;/junegunn/fzf/issues/4879/hovercard&quot; href=&quot;https://github.com/junegunn/fzf/issues/4879&quot;&gt;#4879&lt;/a&gt;) (&lt;a class=&quot;user-mention notranslate&quot; data-hovercard-type=&quot;user&quot; data-hovercard-url=&quot;/users/LangLangBart/hovercard&quot; data-octo-click=&quot;hovercard-link-click&quot; data-octo-dimensions=&quot;link_type:self&quot; href=&quot;https://github.com/LangLangBart&quot;&gt;@LangLangBart&lt;/a&gt;, &lt;a class=&quot;user-mention notranslate&quot; data-hovercard-type=&quot;user&quot; data-hovercard-url=&quot;/users/lucc/hovercard&quot; data-octo-click=&quot;hovercard-link-click&quot; data-octo-dimensions=&quot;link_type:self&quot; href=&quot;https://github.com/lucc&quot;&gt;@lucc&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;</content>
+    <author>
+      <name>junegunn</name>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/700826?s=60&amp;v=4"/>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Repository/13807606/v0.74.1</id>
+    <updated>2026-07-18T12:54:00Z</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/junegunn/fzf/releases/tag/v0.74.1"/>
+    <title>0.74.1</title>
+    <content type="html">&lt;ul&gt;
+&lt;li&gt;The default separator on the info line is no longer shown when the input section is already visually separated from the list section by a border line
+&lt;div class=&quot;highlight highlight-source-shell notranslate position-relative overflow-auto&quot; data-snippet-clipboard-copy-content=&quot;# No separator shown below the header border
+fzf --style full --input-border none --header foo
+
+# Separator shown; no border separates the input section from the list section
+fzf --style full --input-border none --header foo --no-header-border
+
+# No separator below the border of the preview window at &#39;next&#39; position
+fzf --preview : --preview-window next
+
+# Conversely, separator is now shown when the input border does not draw
+# a line facing the list section
+fzf --input-border bottom&quot;&gt;&lt;pre&gt;&lt;span class=&quot;pl-c&quot;&gt;&lt;span class=&quot;pl-c&quot;&gt;#&lt;/span&gt; No separator shown below the header border&lt;/span&gt;
+fzf --style full --input-border none --header foo
+
+&lt;span class=&quot;pl-c&quot;&gt;&lt;span class=&quot;pl-c&quot;&gt;#&lt;/span&gt; Separator shown; no border separates the input section from the list section&lt;/span&gt;
+fzf --style full --input-border none --header foo --no-header-border
+
+&lt;span class=&quot;pl-c&quot;&gt;&lt;span class=&quot;pl-c&quot;&gt;#&lt;/span&gt; No separator below the border of the preview window at &#39;next&#39; position&lt;/span&gt;
+fzf --preview &lt;span class=&quot;pl-c1&quot;&gt;:&lt;/span&gt; --preview-window next
+
+&lt;span class=&quot;pl-c&quot;&gt;&lt;span class=&quot;pl-c&quot;&gt;#&lt;/span&gt; Conversely, separator is now shown when the input border does not draw&lt;/span&gt;
+&lt;span class=&quot;pl-c&quot;&gt;&lt;span class=&quot;pl-c&quot;&gt;#&lt;/span&gt; a line facing the list section&lt;/span&gt;
+fzf --input-border bottom&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;Rendering improvements
+&lt;ul&gt;
+&lt;li&gt;Each frame is now wrapped in synchronized update mode (mode 2026) to reduce flickering on supported terminals&lt;/li&gt;
+&lt;li&gt;Reduced rendering output by 10-23% by skipping redundant SGR sequences&lt;/li&gt;
+&lt;li&gt;Fixed ghost characters and misplaced colors inside Zellij by using CHA instead of CR + CUF for horizontal cursor movement (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;4846391614&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/junegunn/fzf/issues/4858&quot; data-hovercard-type=&quot;issue&quot; data-hovercard-url=&quot;/junegunn/fzf/issues/4858/hovercard&quot; href=&quot;https://github.com/junegunn/fzf/issues/4858&quot;&gt;#4858&lt;/a&gt;, &lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;4890598981&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/zellij-org/zellij/issues/5370&quot; data-hovercard-type=&quot;issue&quot; data-hovercard-url=&quot;/zellij-org/zellij/issues/5370/hovercard&quot; href=&quot;https://github.com/zellij-org/zellij/issues/5370&quot;&gt;zellij-org/zellij#5370&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Fixed cursor restoration on exit with &lt;code&gt;--height --no-clear&lt;/code&gt; inside Neovim terminal by using DECSC/DECRC instead of &lt;code&gt;CSI s&lt;/code&gt;/&lt;code&gt;CSI u&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;nushell: fixed deprecation error of &lt;code&gt;str downcase&lt;/code&gt; on nushell 0.114.0 or above (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;4836377671&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/junegunn/fzf/issues/4857&quot; data-hovercard-type=&quot;issue&quot; data-hovercard-url=&quot;/junegunn/fzf/issues/4857/hovercard&quot; href=&quot;https://github.com/junegunn/fzf/issues/4857&quot;&gt;#4857&lt;/a&gt;) (&lt;a class=&quot;user-mention notranslate&quot; data-hovercard-type=&quot;user&quot; data-hovercard-url=&quot;/users/sim590/hovercard&quot; data-octo-click=&quot;hovercard-link-click&quot; data-octo-dimensions=&quot;link_type:self&quot; href=&quot;https://github.com/sim590&quot;&gt;@sim590&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Each release now includes &lt;code&gt;.deb&lt;/code&gt; packages for easy installation on Debian-based distros (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;4899205502&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/junegunn/fzf/issues/4859&quot; data-hovercard-type=&quot;issue&quot; data-hovercard-url=&quot;/junegunn/fzf/issues/4859/hovercard&quot; href=&quot;https://github.com/junegunn/fzf/issues/4859&quot;&gt;#4859&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;</content>
+    <author>
+      <name>junegunn</name>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/700826?s=60&amp;v=4"/>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Repository/13807606/v0.74.0</id>
+    <updated>2026-07-06T13:35:25Z</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/junegunn/fzf/releases/tag/v0.74.0"/>
+    <title>0.74.0</title>
+    <content type="html">&lt;a target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; href=&quot;https://private-user-images.githubusercontent.com/700826/617597570-006e2a79-1368-452a-92ca-543dc0a25447.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3OTIzOTgxMDQsIm5iZiI6MTc5MjM5NzgwNCwicGF0aCI6Ii83MDA4MjYvNjE3NTk3NTcwLTAwNmUyYTc5LTEzNjgtNDUyYS05MmNhLTU0M2RjMGEyNTQ0Ny5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYxMDE5JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MTAxOVQwODE2NDRaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT00ZDczNWJiNWY4ZWM4ZGQ3ODc4NDU0ZTcwYjVjN2NlMGNhMmVhNTJhMGUwZGIyM2NhZjU3YzFhZWYxMmVlZWNhJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZyZXNwb25zZS1jb250ZW50LXR5cGU9aW1hZ2UlMkZwbmcifQ.bZh2tugVNb3_uvstXbBSMkQ0OU2XgEeEtDHk8DOmHZU&quot;&gt;&lt;img width=&quot;2000&quot; height=&quot;1516&quot; alt=&quot;image&quot; src=&quot;https://private-user-images.githubusercontent.com/700826/617597570-006e2a79-1368-452a-92ca-543dc0a25447.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3OTIzOTgxMDQsIm5iZiI6MTc5MjM5NzgwNCwicGF0aCI6Ii83MDA4MjYvNjE3NTk3NTcwLTAwNmUyYTc5LTEzNjgtNDUyYS05MmNhLTU0M2RjMGEyNTQ0Ny5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYxMDE5JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MTAxOVQwODE2NDRaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT00ZDczNWJiNWY4ZWM4ZGQ3ODc4NDU0ZTcwYjVjN2NlMGNhMmVhNTJhMGUwZGIyM2NhZjU3YzFhZWYxMmVlZWNhJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZyZXNwb25zZS1jb250ZW50LXR5cGU9aW1hZ2UlMkZwbmcifQ.bZh2tugVNb3_uvstXbBSMkQ0OU2XgEeEtDHk8DOmHZU&quot; content-type-secured-asset=&quot;image/png&quot; style=&quot;max-width: 100%; height: auto; max-height: 1516px;&quot;&gt;&lt;/a&gt;
+&lt;p&gt;&lt;em&gt;Release highlights: &lt;a href=&quot;https://junegunn.github.io/fzf/releases/0.74.0/&quot; rel=&quot;nofollow&quot;&gt;https://junegunn.github.io/fzf/releases/0.74.0/&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;On tmux 3.7 or above, &lt;code&gt;--popup&lt;/code&gt; starts fzf in a floating pane instead of a popup (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;4803656827&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/junegunn/fzf/issues/4850&quot; data-hovercard-type=&quot;issue&quot; data-hovercard-url=&quot;/junegunn/fzf/issues/4850/hovercard&quot; href=&quot;https://github.com/junegunn/fzf/issues/4850&quot;&gt;#4850&lt;/a&gt;)
+&lt;ul&gt;
+&lt;li&gt;Unlike a popup, a floating pane is not modal; you can switch to other panes and windows while fzf is running, move and resize the pane with the mouse, zoom it to fullscreen, and use copy-mode in it&lt;/li&gt;
+&lt;li&gt;A floating pane always has a native border, which is what makes the pane movable and resizable, so &lt;code&gt;border-native&lt;/code&gt; is implied&lt;/li&gt;
+&lt;li&gt;A popup is used instead when a border style is explicitly specified with &lt;code&gt;--border&lt;/code&gt;, so that the fzf-drawn border is the only border shown (&lt;code&gt;none&lt;/code&gt; and &lt;code&gt;line&lt;/code&gt; are treated as no border)
+&lt;div class=&quot;highlight highlight-source-shell notranslate position-relative overflow-auto&quot; data-snippet-clipboard-copy-content=&quot;fzf --popup --border&quot;&gt;&lt;pre&gt;fzf --popup --border&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;--border-label&lt;/code&gt; is set as the title of the floating pane, and is displayed on the border if &lt;code&gt;pane-border-status&lt;/code&gt; is enabled in tmux
+&lt;div class=&quot;highlight highlight-source-shell notranslate position-relative overflow-auto&quot; data-snippet-clipboard-copy-content=&quot;fzf --popup --border-label &#39; fzf &#39;&quot;&gt;&lt;pre&gt;fzf --popup --border-label &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&#39;&lt;/span&gt; fzf &lt;span class=&quot;pl-pds&quot;&gt;&#39;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;On Zellij, &lt;code&gt;--popup&lt;/code&gt; uses the native border by default, consistent with tmux, so that the pane can be moved and resized with the mouse; fzf draws its own border when a border style is explicitly specified with &lt;code&gt;--border&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;--border-label&lt;/code&gt; is set as the name of the pane, displayed on the native border&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Added &lt;code&gt;result-final&lt;/code&gt; event, a variant of &lt;code&gt;result&lt;/code&gt; that is not triggered while the input stream is still open (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;4657418733&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/junegunn/fzf/issues/4835&quot; data-hovercard-type=&quot;issue&quot; data-hovercard-url=&quot;/junegunn/fzf/issues/4835/hovercard&quot; href=&quot;https://github.com/junegunn/fzf/issues/4835&quot;&gt;#4835&lt;/a&gt;)
+&lt;ul&gt;
+&lt;li&gt;Use it for one-shot, per-query actions that would otherwise re-fire on every intermediate snapshot during loading
+&lt;div class=&quot;highlight highlight-source-shell notranslate position-relative overflow-auto&quot; data-snippet-clipboard-copy-content=&quot;# &#39;result&#39; fires per intermediate snapshot (header keeps updating during load);
+# &#39;result-final&#39; fires once after the stream closes (footer shows the final count)
+(seq 100; sleep 1; seq 100) | fzf --query 1 \
+  --bind &#39;result:transform-header(echo result: $FZF_MATCH_COUNT),result-final:transform-footer(echo final: $FZF_MATCH_COUNT)&#39;&quot;&gt;&lt;pre&gt;&lt;span class=&quot;pl-c&quot;&gt;&lt;span class=&quot;pl-c&quot;&gt;#&lt;/span&gt; &#39;result&#39; fires per intermediate snapshot (header keeps updating during load);&lt;/span&gt;
+&lt;span class=&quot;pl-c&quot;&gt;&lt;span class=&quot;pl-c&quot;&gt;#&lt;/span&gt; &#39;result-final&#39; fires once after the stream closes (footer shows the final count)&lt;/span&gt;
+(seq 100&lt;span class=&quot;pl-k&quot;&gt;;&lt;/span&gt; sleep 1&lt;span class=&quot;pl-k&quot;&gt;;&lt;/span&gt; seq 100) &lt;span class=&quot;pl-k&quot;&gt;|&lt;/span&gt; fzf --query 1 \
+  --bind &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&#39;&lt;/span&gt;result:transform-header(echo result: $FZF_MATCH_COUNT),result-final:transform-footer(echo final: $FZF_MATCH_COUNT)&lt;span class=&quot;pl-pds&quot;&gt;&#39;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Added &lt;code&gt;wait&lt;/code&gt; action to block subsequent actions until search completes (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;4625192402&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/junegunn/fzf/issues/4825&quot; data-hovercard-type=&quot;issue&quot; data-hovercard-url=&quot;/junegunn/fzf/issues/4825/hovercard&quot; href=&quot;https://github.com/junegunn/fzf/issues/4825&quot;&gt;#4825&lt;/a&gt;)
+&lt;ul&gt;
+&lt;li&gt;Useful for chaining query-changing actions with motion actions to ensure operations on complete results
+&lt;div class=&quot;highlight highlight-source-shell notranslate position-relative overflow-auto&quot; data-snippet-clipboard-copy-content=&quot;# Wait for search to complete before moving to the best match
+fzf --bind &#39;start:change-query(foo)+wait+best&#39;&quot;&gt;&lt;pre&gt;&lt;span class=&quot;pl-c&quot;&gt;&lt;span class=&quot;pl-c&quot;&gt;#&lt;/span&gt; Wait for search to complete before moving to the best match&lt;/span&gt;
+fzf --bind &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&#39;&lt;/span&gt;start:change-query(foo)+wait+best&lt;span class=&quot;pl-pds&quot;&gt;&#39;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;The initial loading of the input is also considered a search in progress, so &lt;code&gt;start:wait&lt;/code&gt; can be used to wait until the input is fully loaded
+&lt;div class=&quot;highlight highlight-source-shell notranslate position-relative overflow-auto&quot; data-snippet-clipboard-copy-content=&quot;# Move to the last item after the input is fully loaded
+(seq 1000; sleep 1; seq 1001 2000) | fzf --bind &#39;start:wait+last&#39;&quot;&gt;&lt;pre&gt;&lt;span class=&quot;pl-c&quot;&gt;&lt;span class=&quot;pl-c&quot;&gt;#&lt;/span&gt; Move to the last item after the input is fully loaded&lt;/span&gt;
+(seq 1000&lt;span class=&quot;pl-k&quot;&gt;;&lt;/span&gt; sleep 1&lt;span class=&quot;pl-k&quot;&gt;;&lt;/span&gt; seq 1001 2000) &lt;span class=&quot;pl-k&quot;&gt;|&lt;/span&gt; fzf --bind &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&#39;&lt;/span&gt;start:wait+last&lt;span class=&quot;pl-pds&quot;&gt;&#39;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Bound &lt;code&gt;alt-left&lt;/code&gt; to &lt;code&gt;backward-word&lt;/code&gt; and &lt;code&gt;alt-right&lt;/code&gt; to &lt;code&gt;forward-word&lt;/code&gt; by default (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;4656515088&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/junegunn/fzf/issues/4833&quot; data-hovercard-type=&quot;issue&quot; data-hovercard-url=&quot;/junegunn/fzf/issues/4833/hovercard&quot; href=&quot;https://github.com/junegunn/fzf/issues/4833&quot;&gt;#4833&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Bug fixes and improvements
+&lt;ul&gt;
+&lt;li&gt;Skip &lt;code&gt;$FZF_CURRENT_ITEM&lt;/code&gt; export when the item is larger than 64 KB; a huge item can overflow &lt;code&gt;ARG_MAX&lt;/code&gt; and break preview and other child commands with &lt;code&gt;E2BIG&lt;/code&gt; (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;4514292809&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/junegunn/fzf/issues/4806&quot; data-hovercard-type=&quot;issue&quot; data-hovercard-url=&quot;/junegunn/fzf/issues/4806/hovercard&quot; href=&quot;https://github.com/junegunn/fzf/issues/4806&quot;&gt;#4806&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;transform&lt;/code&gt; and &lt;code&gt;bg-transform&lt;/code&gt; now allow a bare &lt;code&gt;put&lt;/code&gt; action in the output to insert the key that triggered the action
+&lt;div class=&quot;highlight highlight-source-shell notranslate position-relative overflow-auto&quot; data-snippet-clipboard-copy-content=&quot;# Insert the typed key (&#39;a&#39;) into the query
+fzf --bind &#39;a:transform:echo put&#39;&quot;&gt;&lt;pre&gt;&lt;span class=&quot;pl-c&quot;&gt;&lt;span class=&quot;pl-c&quot;&gt;#&lt;/span&gt; Insert the typed key (&#39;a&#39;) into the query&lt;/span&gt;
+fzf --bind &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&#39;&lt;/span&gt;a:transform:echo put&lt;span class=&quot;pl-pds&quot;&gt;&#39;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ALT-C&lt;/code&gt; in zsh no longer resolves symbolic links when changing the directory, consistent with the &lt;code&gt;cd&lt;/code&gt; builtin (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;4549997195&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/junegunn/fzf/issues/4816&quot; data-hovercard-type=&quot;issue&quot; data-hovercard-url=&quot;/junegunn/fzf/issues/4816/hovercard&quot; href=&quot;https://github.com/junegunn/fzf/issues/4816&quot;&gt;#4816&lt;/a&gt;) (&lt;a class=&quot;user-mention notranslate&quot; data-hovercard-type=&quot;user&quot; data-hovercard-url=&quot;/users/silverneko/hovercard&quot; data-octo-click=&quot;hovercard-link-click&quot; data-octo-dimensions=&quot;link_type:self&quot; href=&quot;https://github.com/silverneko&quot;&gt;@silverneko&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Fixed horizontal mouse wheel events being treated as vertical scrolling (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;4762250445&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/junegunn/fzf/issues/4848&quot; data-hovercard-type=&quot;issue&quot; data-hovercard-url=&quot;/junegunn/fzf/issues/4848/hovercard&quot; href=&quot;https://github.com/junegunn/fzf/issues/4848&quot;&gt;#4848&lt;/a&gt;) (&lt;a class=&quot;user-mention notranslate&quot; data-hovercard-type=&quot;user&quot; data-hovercard-url=&quot;/users/jason5122/hovercard&quot; data-octo-click=&quot;hovercard-link-click&quot; data-octo-dimensions=&quot;link_type:self&quot; href=&quot;https://github.com/jason5122&quot;&gt;@jason5122&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Fixed &lt;code&gt;bw&lt;/code&gt; theme not inheriting overridden colors&lt;/li&gt;
+&lt;li&gt;fish: &lt;code&gt;CTRL-R&lt;/code&gt; now works when &lt;code&gt;$fish_color_normal&lt;/code&gt; or &lt;code&gt;$fish_color_comment&lt;/code&gt; is empty or invalid (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;4655065071&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/junegunn/fzf/issues/4831&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/junegunn/fzf/pull/4831/hovercard&quot; href=&quot;https://github.com/junegunn/fzf/pull/4831&quot;&gt;#4831&lt;/a&gt;) (&lt;a class=&quot;user-mention notranslate&quot; data-hovercard-type=&quot;user&quot; data-hovercard-url=&quot;/users/bitraid/hovercard&quot; data-octo-click=&quot;hovercard-link-click&quot; data-octo-dimensions=&quot;link_type:self&quot; href=&quot;https://github.com/bitraid&quot;&gt;@bitraid&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Fixed empty-shell detection in the install script (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;4540836918&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/junegunn/fzf/issues/4813&quot; data-hovercard-type=&quot;issue&quot; data-hovercard-url=&quot;/junegunn/fzf/issues/4813/hovercard&quot; href=&quot;https://github.com/junegunn/fzf/issues/4813&quot;&gt;#4813&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Fixed the install script writing nushell source lines into the config files of other shells (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;4536724094&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/junegunn/fzf/issues/4812&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/junegunn/fzf/pull/4812/hovercard&quot; href=&quot;https://github.com/junegunn/fzf/pull/4812&quot;&gt;#4812&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</content>
+    <author>
+      <name>junegunn</name>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/700826?s=60&amp;v=4"/>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Repository/13807606/v0.73.1</id>
+    <updated>2026-05-25T05:38:31Z</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/junegunn/fzf/releases/tag/v0.73.1"/>
+    <title>0.73.1</title>
+    <content type="html">&lt;ul&gt;
+&lt;li&gt;Bug fixes
+&lt;ul&gt;
+&lt;li&gt;Skip &lt;code&gt;$FZF_CURRENT_ITEM&lt;/code&gt; export when the item contains a NUL byte; &lt;code&gt;exec(2)&lt;/code&gt; rejects the env, breaking preview and other child commands (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;4514292809&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/junegunn/fzf/issues/4806&quot; data-hovercard-type=&quot;issue&quot; data-hovercard-url=&quot;/junegunn/fzf/issues/4806/hovercard&quot; href=&quot;https://github.com/junegunn/fzf/issues/4806&quot;&gt;#4806&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Fixed O(n^2) HTTP body accumulation in &lt;code&gt;--listen&lt;/code&gt;; a single ~390 KB request could block the single-threaded server for ~8 s (Michal Majchrowicz, Marcin Wyczechowski, AFINE Team)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</content>
+    <author>
+      <name>github-actions[bot]</name>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/in/15368?s=60&amp;v=4"/>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Repository/13807606/v0.73.0</id>
+    <updated>2026-05-23T15:19:24Z</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/junegunn/fzf/releases/tag/v0.73.0"/>
+    <title>0.73.0</title>
+    <content type="html">&lt;p&gt;&lt;em&gt;Release highlights: &lt;a href=&quot;https://junegunn.github.io/fzf/releases/0.73.0/&quot; rel=&quot;nofollow&quot;&gt;https://junegunn.github.io/fzf/releases/0.73.0/&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Nushell integration via &lt;code&gt;fzf --nushell&lt;/code&gt; and the installer (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;3709042065&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/junegunn/fzf/issues/4630&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/junegunn/fzf/pull/4630/hovercard&quot; href=&quot;https://github.com/junegunn/fzf/pull/4630&quot;&gt;#4630&lt;/a&gt;) (&lt;a class=&quot;user-mention notranslate&quot; data-hovercard-type=&quot;user&quot; data-hovercard-url=&quot;/users/sim590/hovercard&quot; data-octo-click=&quot;hovercard-link-click&quot; data-octo-dimensions=&quot;link_type:self&quot; href=&quot;https://github.com/sim590&quot;&gt;@sim590&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;New &lt;code&gt;--preview-window=next&lt;/code&gt; position that places the preview adjacent to the input section, on the list side: above the input in the default layout, below it in &lt;code&gt;--layout=reverse&lt;/code&gt; (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;4459720665&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/junegunn/fzf/issues/4798&quot; data-hovercard-type=&quot;issue&quot; data-hovercard-url=&quot;/junegunn/fzf/issues/4798/hovercard&quot; href=&quot;https://github.com/junegunn/fzf/issues/4798&quot;&gt;#4798&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Timer-driven &lt;code&gt;every(N)&lt;/code&gt; event for &lt;code&gt;--bind&lt;/code&gt;, where &lt;code&gt;N&lt;/code&gt; is seconds&lt;/li&gt;
+&lt;li&gt;Added &lt;code&gt;$FZF_IDLE_TIME&lt;/code&gt; (whole seconds) and &lt;code&gt;$FZF_IDLE_TIME_MS&lt;/code&gt; (milliseconds), holding the elapsed time since the last user activity
+&lt;ul&gt;
+&lt;li&gt;Pair with &lt;code&gt;every(N)&lt;/code&gt; to build idle-based behavior such as auto-accept or auto-quit (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;295249125&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/junegunn/fzf/issues/1211&quot; data-hovercard-type=&quot;issue&quot; data-hovercard-url=&quot;/junegunn/fzf/issues/1211/hovercard&quot; href=&quot;https://github.com/junegunn/fzf/issues/1211&quot;&gt;#1211&lt;/a&gt;)
+&lt;div class=&quot;highlight highlight-source-shell notranslate position-relative overflow-auto&quot; data-snippet-clipboard-copy-content=&quot;# Live process list; --track --id-nth 2 keeps the cursor on the same PID across reloads
+fzf --header-lines 1 --track --id-nth 2 --bind &#39;start,every(2):reload-sync:ps -ef&#39;
+
+# Auto-accept after 10 seconds of inactivity, with a countdown in the footer after 5s
+fzf --bind &#39;every(1):bg-transform:
+  if   [[ $FZF_IDLE_TIME -lt 5  ]]; then echo change-footer:
+  elif [[ $FZF_IDLE_TIME -lt 10 ]]; then echo &amp;quot;change-footer:auto-accept in $((10 - FZF_IDLE_TIME))s&amp;quot;
+  else echo accept
+  fi&#39;&quot;&gt;&lt;pre&gt;&lt;span class=&quot;pl-c&quot;&gt;&lt;span class=&quot;pl-c&quot;&gt;#&lt;/span&gt; Live process list; --track --id-nth 2 keeps the cursor on the same PID across reloads&lt;/span&gt;
+fzf --header-lines 1 --track --id-nth 2 --bind &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&#39;&lt;/span&gt;start,every(2):reload-sync:ps -ef&lt;span class=&quot;pl-pds&quot;&gt;&#39;&lt;/span&gt;&lt;/span&gt;
+
+&lt;span class=&quot;pl-c&quot;&gt;&lt;span class=&quot;pl-c&quot;&gt;#&lt;/span&gt; Auto-accept after 10 seconds of inactivity, with a countdown in the footer after 5s&lt;/span&gt;
+fzf --bind &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&#39;&lt;/span&gt;every(1):bg-transform:&lt;/span&gt;
+&lt;span class=&quot;pl-s&quot;&gt;  if   [[ $FZF_IDLE_TIME -lt 5  ]]; then echo change-footer:&lt;/span&gt;
+&lt;span class=&quot;pl-s&quot;&gt;  elif [[ $FZF_IDLE_TIME -lt 10 ]]; then echo &quot;change-footer:auto-accept in $((10 - FZF_IDLE_TIME))s&quot;&lt;/span&gt;
+&lt;span class=&quot;pl-s&quot;&gt;  else echo accept&lt;/span&gt;
+&lt;span class=&quot;pl-s&quot;&gt;  fi&lt;span class=&quot;pl-pds&quot;&gt;&#39;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Added &lt;code&gt;$FZF_CURRENT_ITEM&lt;/code&gt; for shells where quoting &lt;code&gt;{}&lt;/code&gt; is awkward (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;4506118420&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/junegunn/fzf/issues/4802&quot; data-hovercard-type=&quot;issue&quot; data-hovercard-url=&quot;/junegunn/fzf/issues/4802/hovercard&quot; href=&quot;https://github.com/junegunn/fzf/issues/4802&quot;&gt;#4802&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Bug fixes
+&lt;ul&gt;
+&lt;li&gt;Scoring: non-word characters at the start of input or after a delimiter now receive the same boundary bonus as word characters (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;4434599651&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/junegunn/fzf/issues/4795&quot; data-hovercard-type=&quot;issue&quot; data-hovercard-url=&quot;/junegunn/fzf/issues/4795/hovercard&quot; href=&quot;https://github.com/junegunn/fzf/issues/4795&quot;&gt;#4795&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;change-preview-window&lt;/code&gt; no longer resets &lt;code&gt;wrap&lt;/code&gt; / &lt;code&gt;wrap-word&lt;/code&gt; state set via &lt;code&gt;toggle-preview-wrap&lt;/code&gt; / &lt;code&gt;toggle-preview-wrap-word&lt;/code&gt; (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;4367915754&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/junegunn/fzf/issues/4791&quot; data-hovercard-type=&quot;issue&quot; data-hovercard-url=&quot;/junegunn/fzf/issues/4791/hovercard&quot; href=&quot;https://github.com/junegunn/fzf/issues/4791&quot;&gt;#4791&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Stripped UTF-8-encoded C1 control characters from rendered items to prevent terminal control-sequence injection&lt;/li&gt;
+&lt;li&gt;Fixed integer-overflow panic in &lt;code&gt;FuzzyMatchV2&lt;/code&gt; on 32-bit builds (Michal Majchrowicz, Marcin Wyczechowski, AFINE Team)&lt;/li&gt;
+&lt;li&gt;Fixed &lt;code&gt;bg-transform&lt;/code&gt; &lt;code&gt;reload&lt;/code&gt; / &lt;code&gt;exclude&lt;/code&gt; payloads being dropped&lt;/li&gt;
+&lt;li&gt;Fixed rendering glitch with preview window on the left combined with footer&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</content>
+    <author>
+      <name>junegunn</name>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/700826?s=60&amp;v=4"/>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Repository/13807606/v0.72.0</id>
+    <updated>2026-04-26T14:19:27Z</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/junegunn/fzf/releases/tag/v0.72.0"/>
+    <title>0.72.0</title>
+    <content type="html">&lt;a target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; href=&quot;https://private-user-images.githubusercontent.com/700826/583877898-8754adfd-2ff6-4038-bbba-adf6dd74b887.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3OTIzOTgxMDQsIm5iZiI6MTc5MjM5NzgwNCwicGF0aCI6Ii83MDA4MjYvNTgzODc3ODk4LTg3NTRhZGZkLTJmZjYtNDAzOC1iYmJhLWFkZjZkZDc0Yjg4Ny5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYxMDE5JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MTAxOVQwODE2NDRaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1hMDBkYjRiYjVlYWI3NWUwMjBkYzc1ZGRlMWUzZWMyYTM2ZDIzMWEwN2IxOGVjMTI2MmRhZmJkNTJiZjYwYjA1JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZyZXNwb25zZS1jb250ZW50LXR5cGU9aW1hZ2UlMkZwbmcifQ.lp5tjdxzGGuCqg24ggz-mZIGpbg8HT0nMiCfid8Sog0&quot;&gt;&lt;img width=&quot;738&quot; height=&quot;477&quot; alt=&quot;17772131378862605481422441824188&quot; src=&quot;https://private-user-images.githubusercontent.com/700826/583877898-8754adfd-2ff6-4038-bbba-adf6dd74b887.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3OTIzOTgxMDQsIm5iZiI6MTc5MjM5NzgwNCwicGF0aCI6Ii83MDA4MjYvNTgzODc3ODk4LTg3NTRhZGZkLTJmZjYtNDAzOC1iYmJhLWFkZjZkZDc0Yjg4Ny5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYxMDE5JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MTAxOVQwODE2NDRaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1hMDBkYjRiYjVlYWI3NWUwMjBkYzc1ZGRlMWUzZWMyYTM2ZDIzMWEwN2IxOGVjMTI2MmRhZmJkNTJiZjYwYjA1JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZyZXNwb25zZS1jb250ZW50LXR5cGU9aW1hZ2UlMkZwbmcifQ.lp5tjdxzGGuCqg24ggz-mZIGpbg8HT0nMiCfid8Sog0&quot; content-type-secured-asset=&quot;image/png&quot; style=&quot;max-width: 100%; height: auto; max-height: 477px;&quot;&gt;&lt;/a&gt;
+&lt;p&gt;&lt;em&gt;Release highlights: &lt;a href=&quot;https://junegunn.github.io/fzf/releases/0.72.0/&quot; rel=&quot;nofollow&quot;&gt;https://junegunn.github.io/fzf/releases/0.72.0/&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;--header-border&lt;/code&gt;, &lt;code&gt;--header-lines-border&lt;/code&gt;, and &lt;code&gt;--footer-border&lt;/code&gt; now accept a new &lt;code&gt;inline&lt;/code&gt; style that embeds the section inside the list frame, separated from the list content by a horizontal line. When the list border has side segments, the separator joins them as T-junctions.
+&lt;ul&gt;
+&lt;li&gt;Requires a &lt;code&gt;--list-border&lt;/code&gt; shape that has both top and bottom segments (&lt;code&gt;rounded&lt;/code&gt;, &lt;code&gt;sharp&lt;/code&gt;, &lt;code&gt;bold&lt;/code&gt;, &lt;code&gt;double&lt;/code&gt;, &lt;code&gt;block&lt;/code&gt;, &lt;code&gt;thinblock&lt;/code&gt;, or &lt;code&gt;horizontal&lt;/code&gt;); falls back to &lt;code&gt;line&lt;/code&gt; otherwise. &lt;code&gt;horizontal&lt;/code&gt; has no side borders, so the separator is drawn without T-junction endpoints.&lt;/li&gt;
+&lt;li&gt;Sections stack. Example combining all three:
+&lt;div class=&quot;highlight highlight-source-shell notranslate position-relative overflow-auto&quot; data-snippet-clipboard-copy-content=&quot;ps -ef | fzf --reverse --style full \
+    --header &#39;Select a process&#39; --header-lines 1 \
+    --bind &#39;load:transform-footer:echo $FZF_TOTAL_COUNT processes&#39; \
+    --header-border dashed --header-first \
+    --header-lines-border inline --footer-border inline&quot;&gt;&lt;pre&gt;ps -ef &lt;span class=&quot;pl-k&quot;&gt;|&lt;/span&gt; fzf --reverse --style full \
+    --header &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&#39;&lt;/span&gt;Select a process&lt;span class=&quot;pl-pds&quot;&gt;&#39;&lt;/span&gt;&lt;/span&gt; --header-lines 1 \
+    --bind &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&#39;&lt;/span&gt;load:transform-footer:echo $FZF_TOTAL_COUNT processes&lt;span class=&quot;pl-pds&quot;&gt;&#39;&lt;/span&gt;&lt;/span&gt; \
+    --header-border dashed --header-first \
+    --header-lines-border inline --footer-border inline&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;--header-label&lt;/code&gt; and &lt;code&gt;--footer-label&lt;/code&gt; render on their respective separator row.&lt;/li&gt;
+&lt;li&gt;The separator inherits &lt;code&gt;--color list-border&lt;/code&gt; when the section&#39;s own border color is not explicitly set.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;inline&lt;/code&gt; takes precedence over &lt;code&gt;--header-first&lt;/code&gt;: the inline section stays inside the list frame. &lt;code&gt;--header-border=inline&lt;/code&gt; requires &lt;code&gt;--header-lines-border&lt;/code&gt; to be &lt;code&gt;inline&lt;/code&gt; or unset.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;New &lt;code&gt;dashed&lt;/code&gt; border style with dashed edges (&lt;code&gt;╶&lt;/code&gt; / &lt;code&gt;┆&lt;/code&gt;) and rounded corners.
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;--border=dashed&lt;/code&gt;, &lt;code&gt;--list-border=dashed&lt;/code&gt;, etc.&lt;/li&gt;
+&lt;li&gt;Works with inline sections (T-junctions render correctly).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;[vim] Move and resize popup window when detecting &lt;code&gt;VimResized&lt;/code&gt; event (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;4285468924&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/junegunn/fzf/issues/4778&quot; data-hovercard-type=&quot;issue&quot; data-hovercard-url=&quot;/junegunn/fzf/issues/4778/hovercard&quot; href=&quot;https://github.com/junegunn/fzf/issues/4778&quot;&gt;#4778&lt;/a&gt;) (&lt;a class=&quot;user-mention notranslate&quot; data-hovercard-type=&quot;user&quot; data-hovercard-url=&quot;/users/Vulcalien/hovercard&quot; data-octo-click=&quot;hovercard-link-click&quot; data-octo-dimensions=&quot;link_type:self&quot; href=&quot;https://github.com/Vulcalien&quot;&gt;@Vulcalien&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Bug fixes
+&lt;ul&gt;
+&lt;li&gt;Fixed gutter display in &lt;code&gt;--style=minimal&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Fixed arrow keys / Home / End without modifiers being ignored under the kitty keyboard protocol (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;4275436452&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/junegunn/fzf/issues/4776&quot; data-hovercard-type=&quot;issue&quot; data-hovercard-url=&quot;/junegunn/fzf/issues/4776/hovercard&quot; href=&quot;https://github.com/junegunn/fzf/issues/4776&quot;&gt;#4776&lt;/a&gt;) (&lt;a class=&quot;user-mention notranslate&quot; data-hovercard-type=&quot;user&quot; data-hovercard-url=&quot;/users/TymekDev/hovercard&quot; data-octo-click=&quot;hovercard-link-click&quot; data-octo-dimensions=&quot;link_type:self&quot; href=&quot;https://github.com/TymekDev&quot;&gt;@TymekDev&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;bash: Persist history deletion when &lt;code&gt;histappend&lt;/code&gt; is on (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;4212648569&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/junegunn/fzf/issues/4764&quot; data-hovercard-type=&quot;issue&quot; data-hovercard-url=&quot;/junegunn/fzf/issues/4764/hovercard&quot; href=&quot;https://github.com/junegunn/fzf/issues/4764&quot;&gt;#4764&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</content>
+    <author>
+      <name>junegunn</name>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/700826?s=60&amp;v=4"/>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Repository/13807606/v0.71.0</id>
+    <updated>2026-04-04T05:15:38Z</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/junegunn/fzf/releases/tag/v0.71.0"/>
+    <title>0.71.0</title>
+    <content type="html">&lt;p&gt;&lt;em&gt;Release highlights: &lt;a href=&quot;https://junegunn.github.io/fzf/releases/0.71.0/&quot; rel=&quot;nofollow&quot;&gt;https://junegunn.github.io/fzf/releases/0.71.0/&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Added &lt;code&gt;--popup&lt;/code&gt; as a new name for &lt;code&gt;--tmux&lt;/code&gt; with Zellij support
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;--popup&lt;/code&gt; starts fzf in a tmux popup or a Zellij floating pane&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;--tmux&lt;/code&gt; is now an alias for &lt;code&gt;--popup&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Requires tmux 3.3+ or Zellij 0.44+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Cross-reload item identity with &lt;code&gt;--id-nth&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;Added &lt;code&gt;--id-nth=NTH&lt;/code&gt; to define item identity fields for cross-reload operations&lt;/li&gt;
+&lt;li&gt;When a &lt;code&gt;reload&lt;/code&gt; is triggered with tracking enabled, fzf searches for the tracked item by its identity fields in the new list.
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;--track --id-nth ..&lt;/code&gt; tracks by the entire line&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;--track --id-nth 1&lt;/code&gt; tracks by the first field&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;--track&lt;/code&gt; without &lt;code&gt;--id-nth&lt;/code&gt; retains the existing index-based tracking behavior&lt;/li&gt;
+&lt;li&gt;The UI is temporarily blocked (prompt dimmed, input disabled) until the item is found or loading completes.
+&lt;ul&gt;
+&lt;li&gt;Press &lt;code&gt;Escape&lt;/code&gt; or &lt;code&gt;Ctrl-C&lt;/code&gt; to cancel the blocked state without quitting&lt;/li&gt;
+&lt;li&gt;Info line shows &lt;code&gt;+T*&lt;/code&gt; / &lt;code&gt;+t*&lt;/code&gt; while searching&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;With &lt;code&gt;--multi&lt;/code&gt;, selected items are preserved across &lt;code&gt;reload-sync&lt;/code&gt; by matching their identity fields&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Performance improvements
+&lt;ul&gt;
+&lt;li&gt;The search performance now scales linearly with the number of CPU cores, as we dropped static partitioning to allow better load balancing across threads.
+&lt;div class=&quot;snippet-clipboard-content notranslate position-relative overflow-auto&quot; data-snippet-clipboard-copy-content=&quot;=== query: &#39;linux&#39; ===
+  [all]   baseline:    21.95ms  current:    17.47ms  (1.26x)  matches: 179966 (12.79%)
+  [1T]    baseline:   179.63ms  current:   180.53ms  (1.00x)  matches: 179966 (12.79%)
+  [2T]    baseline:    97.38ms  current:    90.05ms  (1.08x)  matches: 179966 (12.79%)
+  [4T]    baseline:    53.83ms  current:    44.77ms  (1.20x)  matches: 179966 (12.79%)
+  [8T]    baseline:    41.66ms  current:    22.58ms  (1.84x)  matches: 179966 (12.79%)&quot;&gt;&lt;pre class=&quot;notranslate&quot;&gt;&lt;code&gt;=== query: &#39;linux&#39; ===
+  [all]   baseline:    21.95ms  current:    17.47ms  (1.26x)  matches: 179966 (12.79%)
+  [1T]    baseline:   179.63ms  current:   180.53ms  (1.00x)  matches: 179966 (12.79%)
+  [2T]    baseline:    97.38ms  current:    90.05ms  (1.08x)  matches: 179966 (12.79%)
+  [4T]    baseline:    53.83ms  current:    44.77ms  (1.20x)  matches: 179966 (12.79%)
+  [8T]    baseline:    41.66ms  current:    22.58ms  (1.84x)  matches: 179966 (12.79%)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;Improved the cache structure, reducing memory footprint per entry by 86x.
+&lt;ul&gt;
+&lt;li&gt;With the reduced per-entry cost, the cache now has broader coverage.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Shell integration improvements
+&lt;ul&gt;
+&lt;li&gt;bash: CTRL-R now supports multi-select and &lt;code&gt;shift-delete&lt;/code&gt; to delete history entries (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;4064466444&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/junegunn/fzf/issues/4715&quot; data-hovercard-type=&quot;issue&quot; data-hovercard-url=&quot;/junegunn/fzf/issues/4715/hovercard&quot; href=&quot;https://github.com/junegunn/fzf/issues/4715&quot;&gt;#4715&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;fish:
+&lt;ul&gt;
+&lt;li&gt;Improved command history (CTRL-R) (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;4024537582&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/junegunn/fzf/issues/4703&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/junegunn/fzf/pull/4703/hovercard&quot; href=&quot;https://github.com/junegunn/fzf/pull/4703&quot;&gt;#4703&lt;/a&gt;) (&lt;a class=&quot;user-mention notranslate&quot; data-hovercard-type=&quot;user&quot; data-hovercard-url=&quot;/users/bitraid/hovercard&quot; data-octo-click=&quot;hovercard-link-click&quot; data-octo-dimensions=&quot;link_type:self&quot; href=&quot;https://github.com/bitraid&quot;&gt;@bitraid&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Rewrite completion script (SHIFT-TAB) (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;4113803018&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/junegunn/fzf/issues/4731&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/junegunn/fzf/pull/4731/hovercard&quot; href=&quot;https://github.com/junegunn/fzf/pull/4731&quot;&gt;#4731&lt;/a&gt;) (&lt;a class=&quot;user-mention notranslate&quot; data-hovercard-type=&quot;user&quot; data-hovercard-url=&quot;/users/bitraid/hovercard&quot; data-octo-click=&quot;hovercard-link-click&quot; data-octo-dimensions=&quot;link_type:self&quot; href=&quot;https://github.com/bitraid&quot;&gt;@bitraid&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Increase minimum fish version requirement to 3.4.0 (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;4113803018&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/junegunn/fzf/issues/4731&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/junegunn/fzf/pull/4731/hovercard&quot; href=&quot;https://github.com/junegunn/fzf/pull/4731&quot;&gt;#4731&lt;/a&gt;) (&lt;a class=&quot;user-mention notranslate&quot; data-hovercard-type=&quot;user&quot; data-hovercard-url=&quot;/users/bitraid/hovercard&quot; data-octo-click=&quot;hovercard-link-click&quot; data-octo-dimensions=&quot;link_type:self&quot; href=&quot;https://github.com/bitraid&quot;&gt;@bitraid&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;GET /&lt;/code&gt; HTTP endpoint now includes &lt;code&gt;positions&lt;/code&gt; field in each match entry, providing the indices of matched characters for external highlighting (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;4106856726&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/junegunn/fzf/issues/4726&quot; data-hovercard-type=&quot;issue&quot; data-hovercard-url=&quot;/junegunn/fzf/issues/4726/hovercard&quot; href=&quot;https://github.com/junegunn/fzf/issues/4726&quot;&gt;#4726&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Allow adaptive height with negative value (&lt;code&gt;--height=~-HEIGHT&lt;/code&gt;) (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;3954143187&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/junegunn/fzf/issues/4682&quot; data-hovercard-type=&quot;issue&quot; data-hovercard-url=&quot;/junegunn/fzf/issues/4682/hovercard&quot; href=&quot;https://github.com/junegunn/fzf/issues/4682&quot;&gt;#4682&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Bug fixes
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;--walker=follow&lt;/code&gt; no longer follows symlinks whose target is an ancestor of the walker root, avoiding severe resource exhaustion when a symlink points outside the tree (e.g. Wine&#39;s &lt;code&gt;z:&lt;/code&gt; → &lt;code&gt;/&lt;/code&gt;) (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;4043386451&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/junegunn/fzf/issues/4710&quot; data-hovercard-type=&quot;issue&quot; data-hovercard-url=&quot;/junegunn/fzf/issues/4710/hovercard&quot; href=&quot;https://github.com/junegunn/fzf/issues/4710&quot;&gt;#4710&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Fixed AWK tokenizer not treating a new line character as whitespace&lt;/li&gt;
+&lt;li&gt;Fixed &lt;code&gt;--{accept,with}-nth&lt;/code&gt; removing trailing whitespaces with a non-default &lt;code&gt;--delimiter&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Fixed OSC8 hyperlinks being mangled when the URL contains unicode characters (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;4039147695&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/junegunn/fzf/issues/4707&quot; data-hovercard-type=&quot;issue&quot; data-hovercard-url=&quot;/junegunn/fzf/issues/4707/hovercard&quot; href=&quot;https://github.com/junegunn/fzf/issues/4707&quot;&gt;#4707&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Fixed &lt;code&gt;--with-shell&lt;/code&gt; not handling quoted arguments correctly (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;9601667&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/junegunn/fzf/discussions/4709&quot; data-hovercard-type=&quot;discussion&quot; data-hovercard-url=&quot;/junegunn/fzf/discussions/4709/hovercard&quot; href=&quot;https://github.com/junegunn/fzf/discussions/4709&quot;&gt;#4709&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Fixed child processes not being terminated on Windows (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;4092705875&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/junegunn/fzf/issues/4723&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/junegunn/fzf/pull/4723/hovercard&quot; href=&quot;https://github.com/junegunn/fzf/pull/4723&quot;&gt;#4723&lt;/a&gt;) (&lt;a class=&quot;user-mention notranslate&quot; data-hovercard-type=&quot;user&quot; data-hovercard-url=&quot;/users/pjeby/hovercard&quot; data-octo-click=&quot;hovercard-link-click&quot; data-octo-dimensions=&quot;link_type:self&quot; href=&quot;https://github.com/pjeby&quot;&gt;@pjeby&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Fixed preview scrollbar not rendered after &lt;code&gt;toggle-preview&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Fixed preview follow/scroll with long wrapped lines&lt;/li&gt;
+&lt;li&gt;Fixed tab width when &lt;code&gt;--frozen-left&lt;/code&gt; is used&lt;/li&gt;
+&lt;li&gt;Fixed preview mouse events being processed when no preview window exists&lt;/li&gt;
+&lt;li&gt;zsh: Fixed history widget when &lt;code&gt;sh_glob&lt;/code&gt; option is on (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;4060772761&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/junegunn/fzf/issues/4714&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/junegunn/fzf/pull/4714/hovercard&quot; href=&quot;https://github.com/junegunn/fzf/pull/4714&quot;&gt;#4714&lt;/a&gt;) (&lt;a class=&quot;user-mention notranslate&quot; data-hovercard-type=&quot;user&quot; data-hovercard-url=&quot;/users/EvanHahn/hovercard&quot; data-octo-click=&quot;hovercard-link-click&quot; data-octo-dimensions=&quot;link_type:self&quot; href=&quot;https://github.com/EvanHahn&quot;&gt;@EvanHahn&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</content>
+    <author>
+      <name>junegunn</name>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/700826?s=60&amp;v=4"/>
+  </entry>
+</feed>

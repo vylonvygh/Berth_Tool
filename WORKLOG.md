@@ -36,3 +36,11 @@ Result: cargo and rustc present; git repo initialized with no commits yet; human
 Commit: pending (initial commit)
 Noticed: cargo-nextest not packaged/installed (SPEC §15 prefers it; AGENTS.md allows cargo test fallback)
 Next: initial commit, then Phase 0 research
+
+### 2026-10-19 08:16 | main | AI: opencode/big-pickle
+Intent: Phase 0 research (SPEC §17.0) — probe GitHub/GitLab endpoints from SPEC §6, save fixtures under tests/fixtures/, write docs/providers.md with findings and web-vs-API decision. Initial commit done first.
+Actions: appended this entry; will curl HTTPS endpoints with User-Agent berth/0.1.0, no auth, no redirects followed for redirect probes
+Result: (in progress)
+Commit: 5d1b22b (bootstrap) 
+Noticed:
+Next: probe GitHub endpoints

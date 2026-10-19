@@ -1,0 +1,960 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xml:lang="en-US">
+  <id>tag:github.com,2008:https://github.com/neovim/neovim/releases</id>
+  <link type="text/html" rel="alternate" href="https://github.com/neovim/neovim/releases"/>
+  <link type="application/atom+xml" rel="self" href="https://github.com/neovim/neovim/releases.atom"/>
+  <title>Release notes from neovim</title>
+  <updated>2026-10-19T01:19:32Z</updated>
+  <entry>
+    <id>tag:github.com,2008:Repository/16408992/nightly</id>
+    <updated>2026-10-19T05:25:40Z</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/neovim/neovim/releases/tag/nightly"/>
+    <title>Nvim development (prerelease) build</title>
+    <content type="html">&lt;div class=&quot;snippet-clipboard-content notranslate position-relative overflow-auto&quot; data-snippet-clipboard-copy-content=&quot;NVIM v0.13.0-dev-1915+gc5641b2bfb
+Build type: RelWithDebInfo
+LuaJIT 2.1.1791988261&quot;&gt;&lt;pre class=&quot;notranslate&quot;&gt;&lt;code&gt;NVIM v0.13.0-dev-1915+gc5641b2bfb
+Build type: RelWithDebInfo
+LuaJIT 2.1.1791988261
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Release notes&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/neovim/neovim/commit/c5641b2bfb01024572caae110fc22956d6e7555b&quot;&gt;Changelog&lt;/a&gt; (fixes + features)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;/neovim/neovim/blob/nightly/runtime/doc/news.txt&quot;&gt;News&lt;/a&gt; (&lt;code&gt;:help news&lt;/code&gt; in Nvim)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Install&lt;/h2&gt;
+&lt;h3&gt;Windows&lt;/h3&gt;
+&lt;h4&gt;Zip&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;Download &lt;strong&gt;nvim-win64.zip&lt;/strong&gt; (or &lt;strong&gt;nvim-win-arm64.zip&lt;/strong&gt; for ARM)&lt;/li&gt;
+&lt;li&gt;Extract the zip&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;nvim.exe&lt;/code&gt; in your terminal&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4&gt;MSI&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;Download &lt;strong&gt;nvim-win64.msi&lt;/strong&gt; (or &lt;strong&gt;nvim-win-arm64.msi&lt;/strong&gt; for ARM)&lt;/li&gt;
+&lt;li&gt;Run the MSI&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;nvim.exe&lt;/code&gt; in your terminal&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Note: On Windows &quot;Server&quot; you may need to &lt;a href=&quot;https://neovim.io/doc/install/#windows&quot; rel=&quot;nofollow&quot;&gt;install &lt;code&gt;vcruntime*.dll&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;h3&gt;macOS (x86_64)&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Download &lt;strong&gt;nvim-macos-x86_64.tar.gz&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;xattr -c ./nvim-macos-x86_64.tar.gz&lt;/code&gt; (to avoid &quot;unknown developer&quot; warning)&lt;/li&gt;
+&lt;li&gt;Extract: &lt;code&gt;tar xzvf nvim-macos-x86_64.tar.gz&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;./nvim-macos-x86_64/bin/nvim&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;macOS (arm64)&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Download &lt;strong&gt;nvim-macos-arm64.tar.gz&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;xattr -c ./nvim-macos-arm64.tar.gz&lt;/code&gt; (to avoid &quot;unknown developer&quot; warning)&lt;/li&gt;
+&lt;li&gt;Extract: &lt;code&gt;tar xzvf nvim-macos-arm64.tar.gz&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;./nvim-macos-arm64/bin/nvim&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;Linux (x86_64)&lt;/h3&gt;
+&lt;p&gt;If your system does not have the required glibc version, try the (unsupported) &lt;a href=&quot;https://github.com/neovim/neovim-releases&quot;&gt;builds for older glibc&lt;/a&gt;.&lt;/p&gt;
+&lt;h4&gt;AppImage&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;Download &lt;strong&gt;nvim-linux-x86_64.appimage&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;chmod u+x nvim-linux-x86_64.appimage &amp;amp;&amp;amp; ./nvim-linux-x86_64.appimage&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;If your system does not have FUSE you can &lt;a href=&quot;https://github.com/AppImage/AppImageKit/wiki/FUSE#type-2-appimage&quot;&gt;extract the appimage&lt;/a&gt;:
+&lt;div class=&quot;highlight highlight-source-shell notranslate position-relative overflow-auto&quot; data-snippet-clipboard-copy-content=&quot;./nvim-linux-x86_64.appimage --appimage-extract
+./squashfs-root/usr/bin/nvim&quot;&gt;&lt;pre&gt;./nvim-linux-x86_64.appimage --appimage-extract
+./squashfs-root/usr/bin/nvim&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4&gt;Tarball&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;Download &lt;strong&gt;nvim-linux-x86_64.tar.gz&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Extract: &lt;code&gt;tar xzvf nvim-linux-x86_64.tar.gz&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;./nvim-linux-x86_64/bin/nvim&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;Linux (arm64)&lt;/h3&gt;
+&lt;h4&gt;AppImage&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;Download &lt;strong&gt;nvim-linux-arm64.appimage&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;chmod u+x nvim-linux-arm64.appimage &amp;amp;&amp;amp; ./nvim-linux-arm64.appimage&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;If your system does not have FUSE you can &lt;a href=&quot;https://github.com/AppImage/AppImageKit/wiki/FUSE#type-2-appimage&quot;&gt;extract the appimage&lt;/a&gt;:
+&lt;div class=&quot;highlight highlight-source-shell notranslate position-relative overflow-auto&quot; data-snippet-clipboard-copy-content=&quot;./nvim-linux-arm64.appimage --appimage-extract
+./squashfs-root/usr/bin/nvim&quot;&gt;&lt;pre&gt;./nvim-linux-arm64.appimage --appimage-extract
+./squashfs-root/usr/bin/nvim&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4&gt;Tarball&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;Download &lt;strong&gt;nvim-linux-arm64.tar.gz&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Extract: &lt;code&gt;tar xzvf nvim-linux-arm64.tar.gz&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;./nvim-linux-arm64/bin/nvim&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;Other&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Install by &lt;a href=&quot;https://github.com/neovim/neovim/blob/master/INSTALL.md#install-from-package&quot;&gt;package manager&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content>
+    <author>
+      <name>github-actions[bot]</name>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/in/15368?s=60&amp;v=4"/>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Repository/16408992/v0.12.6</id>
+    <updated>2026-10-09T16:14:44Z</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/neovim/neovim/releases/tag/v0.12.6"/>
+    <title>Nvim 0.12.6</title>
+    <content type="html">&lt;div class=&quot;snippet-clipboard-content notranslate position-relative overflow-auto&quot; data-snippet-clipboard-copy-content=&quot;NVIM v0.12.6
+Build type: Release
+LuaJIT 2.1.1774638290&quot;&gt;&lt;pre class=&quot;notranslate&quot;&gt;&lt;code&gt;NVIM v0.12.6
+Build type: Release
+LuaJIT 2.1.1774638290
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Release notes&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/neovim/neovim/commit/779c36969e31080503be2dfccbcc3f999e289606&quot;&gt;Changelog&lt;/a&gt; (fixes + features)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;/neovim/neovim/blob/v0.12.6/runtime/doc/news.txt&quot;&gt;News&lt;/a&gt; (&lt;code&gt;:help news&lt;/code&gt; in Nvim)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Install&lt;/h2&gt;
+&lt;h3&gt;Windows&lt;/h3&gt;
+&lt;h4&gt;Zip&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;Download &lt;strong&gt;nvim-win64.zip&lt;/strong&gt; (or &lt;strong&gt;nvim-win-arm64.zip&lt;/strong&gt; for ARM)&lt;/li&gt;
+&lt;li&gt;Extract the zip&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;nvim.exe&lt;/code&gt; in your terminal&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4&gt;MSI&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;Download &lt;strong&gt;nvim-win64.msi&lt;/strong&gt; (or &lt;strong&gt;nvim-win-arm64.msi&lt;/strong&gt; for ARM)&lt;/li&gt;
+&lt;li&gt;Run the MSI&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;nvim.exe&lt;/code&gt; in your terminal&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Note: On Windows &quot;Server&quot; you may need to &lt;a href=&quot;https://neovim.io/doc/install/#windows&quot; rel=&quot;nofollow&quot;&gt;install &lt;code&gt;vcruntime*.dll&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;h3&gt;macOS (x86_64)&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Download &lt;strong&gt;nvim-macos-x86_64.tar.gz&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;xattr -c ./nvim-macos-x86_64.tar.gz&lt;/code&gt; (to avoid &quot;unknown developer&quot; warning)&lt;/li&gt;
+&lt;li&gt;Extract: &lt;code&gt;tar xzvf nvim-macos-x86_64.tar.gz&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;./nvim-macos-x86_64/bin/nvim&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;macOS (arm64)&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Download &lt;strong&gt;nvim-macos-arm64.tar.gz&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;xattr -c ./nvim-macos-arm64.tar.gz&lt;/code&gt; (to avoid &quot;unknown developer&quot; warning)&lt;/li&gt;
+&lt;li&gt;Extract: &lt;code&gt;tar xzvf nvim-macos-arm64.tar.gz&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;./nvim-macos-arm64/bin/nvim&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;Linux (x86_64)&lt;/h3&gt;
+&lt;p&gt;If your system does not have the required glibc version, try the (unsupported) &lt;a href=&quot;https://github.com/neovim/neovim-releases&quot;&gt;builds for older glibc&lt;/a&gt;.&lt;/p&gt;
+&lt;h4&gt;AppImage&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;Download &lt;strong&gt;nvim-linux-x86_64.appimage&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;chmod u+x nvim-linux-x86_64.appimage &amp;amp;&amp;amp; ./nvim-linux-x86_64.appimage&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;If your system does not have FUSE you can &lt;a href=&quot;https://github.com/AppImage/AppImageKit/wiki/FUSE#type-2-appimage&quot;&gt;extract the appimage&lt;/a&gt;:
+&lt;div class=&quot;highlight highlight-source-shell notranslate position-relative overflow-auto&quot; data-snippet-clipboard-copy-content=&quot;./nvim-linux-x86_64.appimage --appimage-extract
+./squashfs-root/usr/bin/nvim&quot;&gt;&lt;pre&gt;./nvim-linux-x86_64.appimage --appimage-extract
+./squashfs-root/usr/bin/nvim&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4&gt;Tarball&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;Download &lt;strong&gt;nvim-linux-x86_64.tar.gz&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Extract: &lt;code&gt;tar xzvf nvim-linux-x86_64.tar.gz&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;./nvim-linux-x86_64/bin/nvim&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;Linux (arm64)&lt;/h3&gt;
+&lt;h4&gt;AppImage&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;Download &lt;strong&gt;nvim-linux-arm64.appimage&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;chmod u+x nvim-linux-arm64.appimage &amp;amp;&amp;amp; ./nvim-linux-arm64.appimage&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;If your system does not have FUSE you can &lt;a href=&quot;https://github.com/AppImage/AppImageKit/wiki/FUSE#type-2-appimage&quot;&gt;extract the appimage&lt;/a&gt;:
+&lt;div class=&quot;highlight highlight-source-shell notranslate position-relative overflow-auto&quot; data-snippet-clipboard-copy-content=&quot;./nvim-linux-arm64.appimage --appimage-extract
+./squashfs-root/usr/bin/nvim&quot;&gt;&lt;pre&gt;./nvim-linux-arm64.appimage --appimage-extract
+./squashfs-root/usr/bin/nvim&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4&gt;Tarball&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;Download &lt;strong&gt;nvim-linux-arm64.tar.gz&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Extract: &lt;code&gt;tar xzvf nvim-linux-arm64.tar.gz&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;./nvim-linux-arm64/bin/nvim&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;Other&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Install by &lt;a href=&quot;https://github.com/neovim/neovim/blob/master/INSTALL.md#install-from-package&quot;&gt;package manager&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content>
+    <author>
+      <name>github-actions[bot]</name>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/in/15368?s=60&amp;v=4"/>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Repository/16408992/stable</id>
+    <updated>2026-10-09T15:43:20Z</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/neovim/neovim/releases/tag/stable"/>
+    <title>Nvim release build</title>
+    <content type="html">&lt;div class=&quot;snippet-clipboard-content notranslate position-relative overflow-auto&quot; data-snippet-clipboard-copy-content=&quot;NVIM v0.12.6
+Build type: Release
+LuaJIT 2.1.1774638290&quot;&gt;&lt;pre class=&quot;notranslate&quot;&gt;&lt;code&gt;NVIM v0.12.6
+Build type: Release
+LuaJIT 2.1.1774638290
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Release notes&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/neovim/neovim/commit/779c36969e31080503be2dfccbcc3f999e289606&quot;&gt;Changelog&lt;/a&gt; (fixes + features)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;/neovim/neovim/blob/stable/runtime/doc/news.txt&quot;&gt;News&lt;/a&gt; (&lt;code&gt;:help news&lt;/code&gt; in Nvim)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Install&lt;/h2&gt;
+&lt;h3&gt;Windows&lt;/h3&gt;
+&lt;h4&gt;Zip&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;Download &lt;strong&gt;nvim-win64.zip&lt;/strong&gt; (or &lt;strong&gt;nvim-win-arm64.zip&lt;/strong&gt; for ARM)&lt;/li&gt;
+&lt;li&gt;Extract the zip&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;nvim.exe&lt;/code&gt; in your terminal&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4&gt;MSI&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;Download &lt;strong&gt;nvim-win64.msi&lt;/strong&gt; (or &lt;strong&gt;nvim-win-arm64.msi&lt;/strong&gt; for ARM)&lt;/li&gt;
+&lt;li&gt;Run the MSI&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;nvim.exe&lt;/code&gt; in your terminal&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Note: On Windows &quot;Server&quot; you may need to &lt;a href=&quot;https://neovim.io/doc/install/#windows&quot; rel=&quot;nofollow&quot;&gt;install &lt;code&gt;vcruntime*.dll&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;h3&gt;macOS (x86_64)&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Download &lt;strong&gt;nvim-macos-x86_64.tar.gz&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;xattr -c ./nvim-macos-x86_64.tar.gz&lt;/code&gt; (to avoid &quot;unknown developer&quot; warning)&lt;/li&gt;
+&lt;li&gt;Extract: &lt;code&gt;tar xzvf nvim-macos-x86_64.tar.gz&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;./nvim-macos-x86_64/bin/nvim&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;macOS (arm64)&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Download &lt;strong&gt;nvim-macos-arm64.tar.gz&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;xattr -c ./nvim-macos-arm64.tar.gz&lt;/code&gt; (to avoid &quot;unknown developer&quot; warning)&lt;/li&gt;
+&lt;li&gt;Extract: &lt;code&gt;tar xzvf nvim-macos-arm64.tar.gz&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;./nvim-macos-arm64/bin/nvim&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;Linux (x86_64)&lt;/h3&gt;
+&lt;p&gt;If your system does not have the required glibc version, try the (unsupported) &lt;a href=&quot;https://github.com/neovim/neovim-releases&quot;&gt;builds for older glibc&lt;/a&gt;.&lt;/p&gt;
+&lt;h4&gt;AppImage&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;Download &lt;strong&gt;nvim-linux-x86_64.appimage&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;chmod u+x nvim-linux-x86_64.appimage &amp;amp;&amp;amp; ./nvim-linux-x86_64.appimage&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;If your system does not have FUSE you can &lt;a href=&quot;https://github.com/AppImage/AppImageKit/wiki/FUSE#type-2-appimage&quot;&gt;extract the appimage&lt;/a&gt;:
+&lt;div class=&quot;highlight highlight-source-shell notranslate position-relative overflow-auto&quot; data-snippet-clipboard-copy-content=&quot;./nvim-linux-x86_64.appimage --appimage-extract
+./squashfs-root/usr/bin/nvim&quot;&gt;&lt;pre&gt;./nvim-linux-x86_64.appimage --appimage-extract
+./squashfs-root/usr/bin/nvim&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4&gt;Tarball&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;Download &lt;strong&gt;nvim-linux-x86_64.tar.gz&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Extract: &lt;code&gt;tar xzvf nvim-linux-x86_64.tar.gz&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;./nvim-linux-x86_64/bin/nvim&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;Linux (arm64)&lt;/h3&gt;
+&lt;h4&gt;AppImage&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;Download &lt;strong&gt;nvim-linux-arm64.appimage&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;chmod u+x nvim-linux-arm64.appimage &amp;amp;&amp;amp; ./nvim-linux-arm64.appimage&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;If your system does not have FUSE you can &lt;a href=&quot;https://github.com/AppImage/AppImageKit/wiki/FUSE#type-2-appimage&quot;&gt;extract the appimage&lt;/a&gt;:
+&lt;div class=&quot;highlight highlight-source-shell notranslate position-relative overflow-auto&quot; data-snippet-clipboard-copy-content=&quot;./nvim-linux-arm64.appimage --appimage-extract
+./squashfs-root/usr/bin/nvim&quot;&gt;&lt;pre&gt;./nvim-linux-arm64.appimage --appimage-extract
+./squashfs-root/usr/bin/nvim&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4&gt;Tarball&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;Download &lt;strong&gt;nvim-linux-arm64.tar.gz&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Extract: &lt;code&gt;tar xzvf nvim-linux-arm64.tar.gz&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;./nvim-linux-arm64/bin/nvim&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;Other&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Install by &lt;a href=&quot;https://github.com/neovim/neovim/blob/master/INSTALL.md#install-from-package&quot;&gt;package manager&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content>
+    <author>
+      <name>github-actions[bot]</name>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/in/15368?s=60&amp;v=4"/>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Repository/16408992/v0.12.5</id>
+    <updated>2026-08-23T18:45:18Z</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/neovim/neovim/releases/tag/v0.12.5"/>
+    <title>Nvim 0.12.5</title>
+    <content type="html">&lt;div class=&quot;snippet-clipboard-content notranslate position-relative overflow-auto&quot; data-snippet-clipboard-copy-content=&quot;NVIM v0.12.5
+Build type: Release
+LuaJIT 2.1.1774638290&quot;&gt;&lt;pre class=&quot;notranslate&quot;&gt;&lt;code&gt;NVIM v0.12.5
+Build type: Release
+LuaJIT 2.1.1774638290
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Release notes&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/neovim/neovim/commit/5885a30e1e1225349079e7a1c4a3848aa8e43e42&quot;&gt;Changelog&lt;/a&gt; (fixes + features)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;/neovim/neovim/blob/v0.12.5/runtime/doc/news.txt&quot;&gt;News&lt;/a&gt; (&lt;code&gt;:help news&lt;/code&gt; in Nvim)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Install&lt;/h2&gt;
+&lt;h3&gt;Windows&lt;/h3&gt;
+&lt;h4&gt;Zip&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;Download &lt;strong&gt;nvim-win64.zip&lt;/strong&gt; (or &lt;strong&gt;nvim-win-arm64.zip&lt;/strong&gt; for ARM)&lt;/li&gt;
+&lt;li&gt;Extract the zip&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;nvim.exe&lt;/code&gt; in your terminal&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4&gt;MSI&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;Download &lt;strong&gt;nvim-win64.msi&lt;/strong&gt; (or &lt;strong&gt;nvim-win-arm64.msi&lt;/strong&gt; for ARM)&lt;/li&gt;
+&lt;li&gt;Run the MSI&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;nvim.exe&lt;/code&gt; in your terminal&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Note: On Windows &quot;Server&quot; you may need to &lt;a href=&quot;https://neovim.io/doc/install/#windows&quot; rel=&quot;nofollow&quot;&gt;install &lt;code&gt;vcruntime*.dll&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;h3&gt;macOS (x86_64)&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Download &lt;strong&gt;nvim-macos-x86_64.tar.gz&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;xattr -c ./nvim-macos-x86_64.tar.gz&lt;/code&gt; (to avoid &quot;unknown developer&quot; warning)&lt;/li&gt;
+&lt;li&gt;Extract: &lt;code&gt;tar xzvf nvim-macos-x86_64.tar.gz&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;./nvim-macos-x86_64/bin/nvim&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;macOS (arm64)&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Download &lt;strong&gt;nvim-macos-arm64.tar.gz&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;xattr -c ./nvim-macos-arm64.tar.gz&lt;/code&gt; (to avoid &quot;unknown developer&quot; warning)&lt;/li&gt;
+&lt;li&gt;Extract: &lt;code&gt;tar xzvf nvim-macos-arm64.tar.gz&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;./nvim-macos-arm64/bin/nvim&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;Linux (x86_64)&lt;/h3&gt;
+&lt;p&gt;If your system does not have the required glibc version, try the (unsupported) &lt;a href=&quot;https://github.com/neovim/neovim-releases&quot;&gt;builds for older glibc&lt;/a&gt;.&lt;/p&gt;
+&lt;h4&gt;AppImage&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;Download &lt;strong&gt;nvim-linux-x86_64.appimage&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;chmod u+x nvim-linux-x86_64.appimage &amp;amp;&amp;amp; ./nvim-linux-x86_64.appimage&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;If your system does not have FUSE you can &lt;a href=&quot;https://github.com/AppImage/AppImageKit/wiki/FUSE#type-2-appimage&quot;&gt;extract the appimage&lt;/a&gt;:
+&lt;div class=&quot;highlight highlight-source-shell notranslate position-relative overflow-auto&quot; data-snippet-clipboard-copy-content=&quot;./nvim-linux-x86_64.appimage --appimage-extract
+./squashfs-root/usr/bin/nvim&quot;&gt;&lt;pre&gt;./nvim-linux-x86_64.appimage --appimage-extract
+./squashfs-root/usr/bin/nvim&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4&gt;Tarball&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;Download &lt;strong&gt;nvim-linux-x86_64.tar.gz&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Extract: &lt;code&gt;tar xzvf nvim-linux-x86_64.tar.gz&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;./nvim-linux-x86_64/bin/nvim&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;Linux (arm64)&lt;/h3&gt;
+&lt;h4&gt;AppImage&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;Download &lt;strong&gt;nvim-linux-arm64.appimage&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;chmod u+x nvim-linux-arm64.appimage &amp;amp;&amp;amp; ./nvim-linux-arm64.appimage&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;If your system does not have FUSE you can &lt;a href=&quot;https://github.com/AppImage/AppImageKit/wiki/FUSE#type-2-appimage&quot;&gt;extract the appimage&lt;/a&gt;:
+&lt;div class=&quot;highlight highlight-source-shell notranslate position-relative overflow-auto&quot; data-snippet-clipboard-copy-content=&quot;./nvim-linux-arm64.appimage --appimage-extract
+./squashfs-root/usr/bin/nvim&quot;&gt;&lt;pre&gt;./nvim-linux-arm64.appimage --appimage-extract
+./squashfs-root/usr/bin/nvim&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4&gt;Tarball&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;Download &lt;strong&gt;nvim-linux-arm64.tar.gz&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Extract: &lt;code&gt;tar xzvf nvim-linux-arm64.tar.gz&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;./nvim-linux-arm64/bin/nvim&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;Other&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Install by &lt;a href=&quot;https://github.com/neovim/neovim/blob/master/INSTALL.md#install-from-package&quot;&gt;package manager&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content>
+    <author>
+      <name>github-actions[bot]</name>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/in/15368?s=60&amp;v=4"/>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Repository/16408992/v0.12.4</id>
+    <updated>2026-07-05T13:45:17Z</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/neovim/neovim/releases/tag/v0.12.4"/>
+    <title>Nvim 0.12.4</title>
+    <content type="html">&lt;div class=&quot;snippet-clipboard-content notranslate position-relative overflow-auto&quot; data-snippet-clipboard-copy-content=&quot;NVIM v0.12.4
+Build type: Release
+LuaJIT 2.1.1774638290&quot;&gt;&lt;pre class=&quot;notranslate&quot;&gt;&lt;code&gt;NVIM v0.12.4
+Build type: Release
+LuaJIT 2.1.1774638290
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Release notes&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/neovim/neovim/commit/68ea43cd0c28af25cd47731308c94fedfcfd1b0b&quot;&gt;Changelog&lt;/a&gt; (fixes + features)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;/neovim/neovim/blob/v0.12.4/runtime/doc/news.txt&quot;&gt;News&lt;/a&gt; (&lt;code&gt;:help news&lt;/code&gt; in Nvim)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Install&lt;/h2&gt;
+&lt;h3&gt;Windows&lt;/h3&gt;
+&lt;h4&gt;Zip&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;Download &lt;strong&gt;nvim-win64.zip&lt;/strong&gt; (or &lt;strong&gt;nvim-win-arm64.zip&lt;/strong&gt; for ARM)&lt;/li&gt;
+&lt;li&gt;Extract the zip&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;nvim.exe&lt;/code&gt; in your terminal&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4&gt;MSI&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;Download &lt;strong&gt;nvim-win64.msi&lt;/strong&gt; (or &lt;strong&gt;nvim-win-arm64.msi&lt;/strong&gt; for ARM)&lt;/li&gt;
+&lt;li&gt;Run the MSI&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;nvim.exe&lt;/code&gt; in your terminal&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Note: On Windows &quot;Server&quot; you may need to &lt;a href=&quot;https://neovim.io/doc/install/#windows&quot; rel=&quot;nofollow&quot;&gt;install &lt;code&gt;vcruntime*.dll&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;h3&gt;macOS (x86_64)&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Download &lt;strong&gt;nvim-macos-x86_64.tar.gz&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;xattr -c ./nvim-macos-x86_64.tar.gz&lt;/code&gt; (to avoid &quot;unknown developer&quot; warning)&lt;/li&gt;
+&lt;li&gt;Extract: &lt;code&gt;tar xzvf nvim-macos-x86_64.tar.gz&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;./nvim-macos-x86_64/bin/nvim&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;macOS (arm64)&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Download &lt;strong&gt;nvim-macos-arm64.tar.gz&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;xattr -c ./nvim-macos-arm64.tar.gz&lt;/code&gt; (to avoid &quot;unknown developer&quot; warning)&lt;/li&gt;
+&lt;li&gt;Extract: &lt;code&gt;tar xzvf nvim-macos-arm64.tar.gz&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;./nvim-macos-arm64/bin/nvim&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;Linux (x86_64)&lt;/h3&gt;
+&lt;p&gt;If your system does not have the required glibc version, try the (unsupported) &lt;a href=&quot;https://github.com/neovim/neovim-releases&quot;&gt;builds for older glibc&lt;/a&gt;.&lt;/p&gt;
+&lt;h4&gt;AppImage&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;Download &lt;strong&gt;nvim-linux-x86_64.appimage&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;chmod u+x nvim-linux-x86_64.appimage &amp;amp;&amp;amp; ./nvim-linux-x86_64.appimage&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;If your system does not have FUSE you can &lt;a href=&quot;https://github.com/AppImage/AppImageKit/wiki/FUSE#type-2-appimage&quot;&gt;extract the appimage&lt;/a&gt;:
+&lt;div class=&quot;highlight highlight-source-shell notranslate position-relative overflow-auto&quot; data-snippet-clipboard-copy-content=&quot;./nvim-linux-x86_64.appimage --appimage-extract
+./squashfs-root/usr/bin/nvim&quot;&gt;&lt;pre&gt;./nvim-linux-x86_64.appimage --appimage-extract
+./squashfs-root/usr/bin/nvim&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4&gt;Tarball&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;Download &lt;strong&gt;nvim-linux-x86_64.tar.gz&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Extract: &lt;code&gt;tar xzvf nvim-linux-x86_64.tar.gz&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;./nvim-linux-x86_64/bin/nvim&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;Linux (arm64)&lt;/h3&gt;
+&lt;h4&gt;AppImage&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;Download &lt;strong&gt;nvim-linux-arm64.appimage&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;chmod u+x nvim-linux-arm64.appimage &amp;amp;&amp;amp; ./nvim-linux-arm64.appimage&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;If your system does not have FUSE you can &lt;a href=&quot;https://github.com/AppImage/AppImageKit/wiki/FUSE#type-2-appimage&quot;&gt;extract the appimage&lt;/a&gt;:
+&lt;div class=&quot;highlight highlight-source-shell notranslate position-relative overflow-auto&quot; data-snippet-clipboard-copy-content=&quot;./nvim-linux-arm64.appimage --appimage-extract
+./squashfs-root/usr/bin/nvim&quot;&gt;&lt;pre&gt;./nvim-linux-arm64.appimage --appimage-extract
+./squashfs-root/usr/bin/nvim&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4&gt;Tarball&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;Download &lt;strong&gt;nvim-linux-arm64.tar.gz&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Extract: &lt;code&gt;tar xzvf nvim-linux-arm64.tar.gz&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;./nvim-linux-arm64/bin/nvim&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;Other&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Install by &lt;a href=&quot;https://github.com/neovim/neovim/blob/master/INSTALL.md#install-from-package&quot;&gt;package manager&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content>
+    <author>
+      <name>github-actions[bot]</name>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/in/15368?s=60&amp;v=4"/>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Repository/16408992/v0.12.3</id>
+    <updated>2026-06-10T23:20:29Z</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/neovim/neovim/releases/tag/v0.12.3"/>
+    <title>Nvim 0.12.3</title>
+    <content type="html">&lt;div class=&quot;snippet-clipboard-content notranslate position-relative overflow-auto&quot; data-snippet-clipboard-copy-content=&quot;NVIM v0.12.3
+Build type: Release
+LuaJIT 2.1.1774638290&quot;&gt;&lt;pre class=&quot;notranslate&quot;&gt;&lt;code&gt;NVIM v0.12.3
+Build type: Release
+LuaJIT 2.1.1774638290
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Release notes&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/neovim/neovim/commit/35b57441b0bac035dcfc591830e82abc560720b1&quot;&gt;Changelog&lt;/a&gt; (fixes + features)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;/neovim/neovim/blob/v0.12.3/runtime/doc/news.txt&quot;&gt;News&lt;/a&gt; (&lt;code&gt;:help news&lt;/code&gt; in Nvim)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Install&lt;/h2&gt;
+&lt;h3&gt;Windows&lt;/h3&gt;
+&lt;h4&gt;Zip&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;Download &lt;strong&gt;nvim-win64.zip&lt;/strong&gt; (or &lt;strong&gt;nvim-win-arm64.zip&lt;/strong&gt; for ARM)&lt;/li&gt;
+&lt;li&gt;Extract the zip&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;nvim.exe&lt;/code&gt; in your terminal&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4&gt;MSI&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;Download &lt;strong&gt;nvim-win64.msi&lt;/strong&gt; (or &lt;strong&gt;nvim-win-arm64.msi&lt;/strong&gt; for ARM)&lt;/li&gt;
+&lt;li&gt;Run the MSI&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;nvim.exe&lt;/code&gt; in your terminal&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Note: On Windows &quot;Server&quot; you may need to &lt;a href=&quot;https://neovim.io/doc/install/#windows&quot; rel=&quot;nofollow&quot;&gt;install &lt;code&gt;vcruntime*.dll&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;h3&gt;macOS (x86_64)&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Download &lt;strong&gt;nvim-macos-x86_64.tar.gz&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;xattr -c ./nvim-macos-x86_64.tar.gz&lt;/code&gt; (to avoid &quot;unknown developer&quot; warning)&lt;/li&gt;
+&lt;li&gt;Extract: &lt;code&gt;tar xzvf nvim-macos-x86_64.tar.gz&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;./nvim-macos-x86_64/bin/nvim&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;macOS (arm64)&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Download &lt;strong&gt;nvim-macos-arm64.tar.gz&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;xattr -c ./nvim-macos-arm64.tar.gz&lt;/code&gt; (to avoid &quot;unknown developer&quot; warning)&lt;/li&gt;
+&lt;li&gt;Extract: &lt;code&gt;tar xzvf nvim-macos-arm64.tar.gz&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;./nvim-macos-arm64/bin/nvim&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;Linux (x86_64)&lt;/h3&gt;
+&lt;p&gt;If your system does not have the required glibc version, try the (unsupported) &lt;a href=&quot;https://github.com/neovim/neovim-releases&quot;&gt;builds for older glibc&lt;/a&gt;.&lt;/p&gt;
+&lt;h4&gt;AppImage&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;Download &lt;strong&gt;nvim-linux-x86_64.appimage&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;chmod u+x nvim-linux-x86_64.appimage &amp;amp;&amp;amp; ./nvim-linux-x86_64.appimage&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;If your system does not have FUSE you can &lt;a href=&quot;https://github.com/AppImage/AppImageKit/wiki/FUSE#type-2-appimage&quot;&gt;extract the appimage&lt;/a&gt;:
+&lt;div class=&quot;highlight highlight-source-shell notranslate position-relative overflow-auto&quot; data-snippet-clipboard-copy-content=&quot;./nvim-linux-x86_64.appimage --appimage-extract
+./squashfs-root/usr/bin/nvim&quot;&gt;&lt;pre&gt;./nvim-linux-x86_64.appimage --appimage-extract
+./squashfs-root/usr/bin/nvim&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4&gt;Tarball&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;Download &lt;strong&gt;nvim-linux-x86_64.tar.gz&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Extract: &lt;code&gt;tar xzvf nvim-linux-x86_64.tar.gz&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;./nvim-linux-x86_64/bin/nvim&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;Linux (arm64)&lt;/h3&gt;
+&lt;h4&gt;AppImage&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;Download &lt;strong&gt;nvim-linux-arm64.appimage&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;chmod u+x nvim-linux-arm64.appimage &amp;amp;&amp;amp; ./nvim-linux-arm64.appimage&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;If your system does not have FUSE you can &lt;a href=&quot;https://github.com/AppImage/AppImageKit/wiki/FUSE#type-2-appimage&quot;&gt;extract the appimage&lt;/a&gt;:
+&lt;div class=&quot;highlight highlight-source-shell notranslate position-relative overflow-auto&quot; data-snippet-clipboard-copy-content=&quot;./nvim-linux-arm64.appimage --appimage-extract
+./squashfs-root/usr/bin/nvim&quot;&gt;&lt;pre&gt;./nvim-linux-arm64.appimage --appimage-extract
+./squashfs-root/usr/bin/nvim&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4&gt;Tarball&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;Download &lt;strong&gt;nvim-linux-arm64.tar.gz&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Extract: &lt;code&gt;tar xzvf nvim-linux-arm64.tar.gz&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;./nvim-linux-arm64/bin/nvim&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;Other&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Install by &lt;a href=&quot;https://github.com/neovim/neovim/blob/master/INSTALL.md#install-from-package&quot;&gt;package manager&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content>
+    <author>
+      <name>github-actions[bot]</name>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/in/15368?s=60&amp;v=4"/>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Repository/16408992/v0.12.2</id>
+    <updated>2026-06-10T23:19:59Z</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/neovim/neovim/releases/tag/v0.12.2"/>
+    <title>Nvim 0.12.2</title>
+    <content type="html">&lt;div class=&quot;snippet-clipboard-content notranslate position-relative overflow-auto&quot; data-snippet-clipboard-copy-content=&quot;NVIM v0.12.2
+Build type: Release
+LuaJIT 2.1.1774638290&quot;&gt;&lt;pre class=&quot;notranslate&quot;&gt;&lt;code&gt;NVIM v0.12.2
+Build type: Release
+LuaJIT 2.1.1774638290
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Release notes&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/neovim/neovim/commit/4b35336f6f850ce68a230716401cdaa21bdb6a25&quot;&gt;Changelog&lt;/a&gt; (fixes + features)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;/neovim/neovim/blob/v0.12.2/runtime/doc/news.txt&quot;&gt;News&lt;/a&gt; (&lt;code&gt;:help news&lt;/code&gt; in Nvim)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Install&lt;/h2&gt;
+&lt;h3&gt;Windows&lt;/h3&gt;
+&lt;h4&gt;Zip&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;Download &lt;strong&gt;nvim-win64.zip&lt;/strong&gt; (or &lt;strong&gt;nvim-win-arm64.zip&lt;/strong&gt; for ARM)&lt;/li&gt;
+&lt;li&gt;Extract the zip&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;nvim.exe&lt;/code&gt; in your terminal&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4&gt;MSI&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;Download &lt;strong&gt;nvim-win64.msi&lt;/strong&gt; (or &lt;strong&gt;nvim-win-arm64.msi&lt;/strong&gt; for ARM)&lt;/li&gt;
+&lt;li&gt;Run the MSI&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;nvim.exe&lt;/code&gt; in your terminal&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Note: On Windows &quot;Server&quot; you may need to &lt;a href=&quot;https://neovim.io/doc/install/#windows&quot; rel=&quot;nofollow&quot;&gt;install &lt;code&gt;vcruntime*.dll&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;h3&gt;macOS (x86_64)&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Download &lt;strong&gt;nvim-macos-x86_64.tar.gz&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;xattr -c ./nvim-macos-x86_64.tar.gz&lt;/code&gt; (to avoid &quot;unknown developer&quot; warning)&lt;/li&gt;
+&lt;li&gt;Extract: &lt;code&gt;tar xzvf nvim-macos-x86_64.tar.gz&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;./nvim-macos-x86_64/bin/nvim&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;macOS (arm64)&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Download &lt;strong&gt;nvim-macos-arm64.tar.gz&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;xattr -c ./nvim-macos-arm64.tar.gz&lt;/code&gt; (to avoid &quot;unknown developer&quot; warning)&lt;/li&gt;
+&lt;li&gt;Extract: &lt;code&gt;tar xzvf nvim-macos-arm64.tar.gz&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;./nvim-macos-arm64/bin/nvim&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;Linux (x86_64)&lt;/h3&gt;
+&lt;p&gt;If your system does not have the required glibc version, try the (unsupported) &lt;a href=&quot;https://github.com/neovim/neovim-releases&quot;&gt;builds for older glibc&lt;/a&gt;.&lt;/p&gt;
+&lt;h4&gt;AppImage&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;Download &lt;strong&gt;nvim-linux-x86_64.appimage&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;chmod u+x nvim-linux-x86_64.appimage &amp;amp;&amp;amp; ./nvim-linux-x86_64.appimage&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;If your system does not have FUSE you can &lt;a href=&quot;https://github.com/AppImage/AppImageKit/wiki/FUSE#type-2-appimage&quot;&gt;extract the appimage&lt;/a&gt;:
+&lt;div class=&quot;highlight highlight-source-shell notranslate position-relative overflow-auto&quot; data-snippet-clipboard-copy-content=&quot;./nvim-linux-x86_64.appimage --appimage-extract
+./squashfs-root/usr/bin/nvim&quot;&gt;&lt;pre&gt;./nvim-linux-x86_64.appimage --appimage-extract
+./squashfs-root/usr/bin/nvim&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4&gt;Tarball&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;Download &lt;strong&gt;nvim-linux-x86_64.tar.gz&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Extract: &lt;code&gt;tar xzvf nvim-linux-x86_64.tar.gz&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;./nvim-linux-x86_64/bin/nvim&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;Linux (arm64)&lt;/h3&gt;
+&lt;h4&gt;AppImage&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;Download &lt;strong&gt;nvim-linux-arm64.appimage&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;chmod u+x nvim-linux-arm64.appimage &amp;amp;&amp;amp; ./nvim-linux-arm64.appimage&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;If your system does not have FUSE you can &lt;a href=&quot;https://github.com/AppImage/AppImageKit/wiki/FUSE#type-2-appimage&quot;&gt;extract the appimage&lt;/a&gt;:
+&lt;div class=&quot;highlight highlight-source-shell notranslate position-relative overflow-auto&quot; data-snippet-clipboard-copy-content=&quot;./nvim-linux-arm64.appimage --appimage-extract
+./squashfs-root/usr/bin/nvim&quot;&gt;&lt;pre&gt;./nvim-linux-arm64.appimage --appimage-extract
+./squashfs-root/usr/bin/nvim&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4&gt;Tarball&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;Download &lt;strong&gt;nvim-linux-arm64.tar.gz&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Extract: &lt;code&gt;tar xzvf nvim-linux-arm64.tar.gz&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;./nvim-linux-arm64/bin/nvim&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;Other&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Install by &lt;a href=&quot;https://github.com/neovim/neovim/blob/master/INSTALL.md#install-from-package&quot;&gt;package manager&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content>
+    <author>
+      <name>github-actions[bot]</name>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/in/15368?s=60&amp;v=4"/>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Repository/16408992/v0.12.1</id>
+    <updated>2026-04-06T15:24:24Z</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/neovim/neovim/releases/tag/v0.12.1"/>
+    <title>Nvim 0.12.1</title>
+    <content type="html">&lt;div class=&quot;snippet-clipboard-content notranslate position-relative overflow-auto&quot; data-snippet-clipboard-copy-content=&quot;NVIM v0.12.1
+Build type: Release
+LuaJIT 2.1.1774638290&quot;&gt;&lt;pre class=&quot;notranslate&quot;&gt;&lt;code&gt;NVIM v0.12.1
+Build type: Release
+LuaJIT 2.1.1774638290
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Release notes&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/neovim/neovim/commit/7ac5a26d5633a41d7e291141488ca635242973a5&quot;&gt;Changelog&lt;/a&gt; (fixes + features)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;/neovim/neovim/blob/v0.12.1/runtime/doc/news.txt&quot;&gt;News&lt;/a&gt; (&lt;code&gt;:help news&lt;/code&gt; in Nvim)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Install&lt;/h2&gt;
+&lt;h3&gt;Windows&lt;/h3&gt;
+&lt;h4&gt;Zip&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;Download &lt;strong&gt;nvim-win64.zip&lt;/strong&gt; (or &lt;strong&gt;nvim-win-arm64.zip&lt;/strong&gt; for ARM)&lt;/li&gt;
+&lt;li&gt;Extract the zip&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;nvim.exe&lt;/code&gt; in your terminal&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4&gt;MSI&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;Download &lt;strong&gt;nvim-win64.msi&lt;/strong&gt; (or &lt;strong&gt;nvim-win-arm64.msi&lt;/strong&gt; for ARM)&lt;/li&gt;
+&lt;li&gt;Run the MSI&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;nvim.exe&lt;/code&gt; in your terminal&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Note: On Windows &quot;Server&quot; you may need to &lt;a href=&quot;https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170&quot; rel=&quot;nofollow&quot;&gt;install vcruntime140.dll&lt;/a&gt;.&lt;/p&gt;
+&lt;h3&gt;macOS (x86_64)&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Download &lt;strong&gt;nvim-macos-x86_64.tar.gz&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;xattr -c ./nvim-macos-x86_64.tar.gz&lt;/code&gt; (to avoid &quot;unknown developer&quot; warning)&lt;/li&gt;
+&lt;li&gt;Extract: &lt;code&gt;tar xzvf nvim-macos-x86_64.tar.gz&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;./nvim-macos-x86_64/bin/nvim&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;macOS (arm64)&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Download &lt;strong&gt;nvim-macos-arm64.tar.gz&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;xattr -c ./nvim-macos-arm64.tar.gz&lt;/code&gt; (to avoid &quot;unknown developer&quot; warning)&lt;/li&gt;
+&lt;li&gt;Extract: &lt;code&gt;tar xzvf nvim-macos-arm64.tar.gz&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;./nvim-macos-arm64/bin/nvim&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;Linux (x86_64)&lt;/h3&gt;
+&lt;p&gt;If your system does not have the required glibc version, try the (unsupported) &lt;a href=&quot;https://github.com/neovim/neovim-releases&quot;&gt;builds for older glibc&lt;/a&gt;.&lt;/p&gt;
+&lt;h4&gt;AppImage&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;Download &lt;strong&gt;nvim-linux-x86_64.appimage&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;chmod u+x nvim-linux-x86_64.appimage &amp;amp;&amp;amp; ./nvim-linux-x86_64.appimage&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;If your system does not have FUSE you can &lt;a href=&quot;https://github.com/AppImage/AppImageKit/wiki/FUSE#type-2-appimage&quot;&gt;extract the appimage&lt;/a&gt;:
+&lt;div class=&quot;highlight highlight-source-shell notranslate position-relative overflow-auto&quot; data-snippet-clipboard-copy-content=&quot;./nvim-linux-x86_64.appimage --appimage-extract
+./squashfs-root/usr/bin/nvim&quot;&gt;&lt;pre&gt;./nvim-linux-x86_64.appimage --appimage-extract
+./squashfs-root/usr/bin/nvim&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4&gt;Tarball&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;Download &lt;strong&gt;nvim-linux-x86_64.tar.gz&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Extract: &lt;code&gt;tar xzvf nvim-linux-x86_64.tar.gz&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;./nvim-linux-x86_64/bin/nvim&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;Linux (arm64)&lt;/h3&gt;
+&lt;h4&gt;AppImage&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;Download &lt;strong&gt;nvim-linux-arm64.appimage&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;chmod u+x nvim-linux-arm64.appimage &amp;amp;&amp;amp; ./nvim-linux-arm64.appimage&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;If your system does not have FUSE you can &lt;a href=&quot;https://github.com/AppImage/AppImageKit/wiki/FUSE#type-2-appimage&quot;&gt;extract the appimage&lt;/a&gt;:
+&lt;div class=&quot;highlight highlight-source-shell notranslate position-relative overflow-auto&quot; data-snippet-clipboard-copy-content=&quot;./nvim-linux-arm64.appimage --appimage-extract
+./squashfs-root/usr/bin/nvim&quot;&gt;&lt;pre&gt;./nvim-linux-arm64.appimage --appimage-extract
+./squashfs-root/usr/bin/nvim&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4&gt;Tarball&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;Download &lt;strong&gt;nvim-linux-arm64.tar.gz&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Extract: &lt;code&gt;tar xzvf nvim-linux-arm64.tar.gz&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;./nvim-linux-arm64/bin/nvim&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;Other&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Install by &lt;a href=&quot;https://github.com/neovim/neovim/blob/master/INSTALL.md#install-from-package&quot;&gt;package manager&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content>
+    <author>
+      <name>github-actions[bot]</name>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/in/15368?s=60&amp;v=4"/>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Repository/16408992/v0.12.0</id>
+    <updated>2026-03-29T17:21:30Z</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/neovim/neovim/releases/tag/v0.12.0"/>
+    <title>Nvim 0.12.0</title>
+    <content type="html">&lt;div class=&quot;snippet-clipboard-content notranslate position-relative overflow-auto&quot; data-snippet-clipboard-copy-content=&quot;NVIM v0.12.0
+Build type: Release
+LuaJIT 2.1.1774638290&quot;&gt;&lt;pre class=&quot;notranslate&quot;&gt;&lt;code&gt;NVIM v0.12.0
+Build type: Release
+LuaJIT 2.1.1774638290
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Release notes&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/neovim/neovim/commit/fc7e5cf6c93fef08effc183087a2c8cc9bf0d75a&quot;&gt;Changelog&lt;/a&gt; (fixes + features)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;/neovim/neovim/blob/v0.12.0/runtime/doc/news.txt&quot;&gt;News&lt;/a&gt; (&lt;code&gt;:help news&lt;/code&gt; in Nvim)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Install&lt;/h2&gt;
+&lt;h3&gt;Windows&lt;/h3&gt;
+&lt;h4&gt;Zip&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;Download &lt;strong&gt;nvim-win64.zip&lt;/strong&gt; (or &lt;strong&gt;nvim-win-arm64.zip&lt;/strong&gt; for ARM)&lt;/li&gt;
+&lt;li&gt;Extract the zip&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;nvim.exe&lt;/code&gt; in your terminal&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4&gt;MSI&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;Download &lt;strong&gt;nvim-win64.msi&lt;/strong&gt; (or &lt;strong&gt;nvim-win-arm64.msi&lt;/strong&gt; for ARM)&lt;/li&gt;
+&lt;li&gt;Run the MSI&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;nvim.exe&lt;/code&gt; in your terminal&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Note: On Windows &quot;Server&quot; you may need to &lt;a href=&quot;https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170&quot; rel=&quot;nofollow&quot;&gt;install vcruntime140.dll&lt;/a&gt;.&lt;/p&gt;
+&lt;h3&gt;macOS (x86_64)&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Download &lt;strong&gt;nvim-macos-x86_64.tar.gz&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;xattr -c ./nvim-macos-x86_64.tar.gz&lt;/code&gt; (to avoid &quot;unknown developer&quot; warning)&lt;/li&gt;
+&lt;li&gt;Extract: &lt;code&gt;tar xzvf nvim-macos-x86_64.tar.gz&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;./nvim-macos-x86_64/bin/nvim&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;macOS (arm64)&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Download &lt;strong&gt;nvim-macos-arm64.tar.gz&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;xattr -c ./nvim-macos-arm64.tar.gz&lt;/code&gt; (to avoid &quot;unknown developer&quot; warning)&lt;/li&gt;
+&lt;li&gt;Extract: &lt;code&gt;tar xzvf nvim-macos-arm64.tar.gz&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;./nvim-macos-arm64/bin/nvim&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;Linux (x86_64)&lt;/h3&gt;
+&lt;p&gt;If your system does not have the required glibc version, try the (unsupported) &lt;a href=&quot;https://github.com/neovim/neovim-releases&quot;&gt;builds for older glibc&lt;/a&gt;.&lt;/p&gt;
+&lt;h4&gt;AppImage&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;Download &lt;strong&gt;nvim-linux-x86_64.appimage&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;chmod u+x nvim-linux-x86_64.appimage &amp;amp;&amp;amp; ./nvim-linux-x86_64.appimage&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;If your system does not have FUSE you can &lt;a href=&quot;https://github.com/AppImage/AppImageKit/wiki/FUSE#type-2-appimage&quot;&gt;extract the appimage&lt;/a&gt;:
+&lt;div class=&quot;highlight highlight-source-shell notranslate position-relative overflow-auto&quot; data-snippet-clipboard-copy-content=&quot;./nvim-linux-x86_64.appimage --appimage-extract
+./squashfs-root/usr/bin/nvim&quot;&gt;&lt;pre&gt;./nvim-linux-x86_64.appimage --appimage-extract
+./squashfs-root/usr/bin/nvim&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4&gt;Tarball&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;Download &lt;strong&gt;nvim-linux-x86_64.tar.gz&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Extract: &lt;code&gt;tar xzvf nvim-linux-x86_64.tar.gz&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;./nvim-linux-x86_64/bin/nvim&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;Linux (arm64)&lt;/h3&gt;
+&lt;h4&gt;AppImage&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;Download &lt;strong&gt;nvim-linux-arm64.appimage&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;chmod u+x nvim-linux-arm64.appimage &amp;amp;&amp;amp; ./nvim-linux-arm64.appimage&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;If your system does not have FUSE you can &lt;a href=&quot;https://github.com/AppImage/AppImageKit/wiki/FUSE#type-2-appimage&quot;&gt;extract the appimage&lt;/a&gt;:
+&lt;div class=&quot;highlight highlight-source-shell notranslate position-relative overflow-auto&quot; data-snippet-clipboard-copy-content=&quot;./nvim-linux-arm64.appimage --appimage-extract
+./squashfs-root/usr/bin/nvim&quot;&gt;&lt;pre&gt;./nvim-linux-arm64.appimage --appimage-extract
+./squashfs-root/usr/bin/nvim&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4&gt;Tarball&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;Download &lt;strong&gt;nvim-linux-arm64.tar.gz&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Extract: &lt;code&gt;tar xzvf nvim-linux-arm64.tar.gz&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;./nvim-linux-arm64/bin/nvim&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;Other&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Install by &lt;a href=&quot;https://github.com/neovim/neovim/blob/master/INSTALL.md#install-from-package&quot;&gt;package manager&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content>
+    <author>
+      <name>github-actions[bot]</name>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/in/15368?s=60&amp;v=4"/>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Repository/16408992/v0.11.7</id>
+    <updated>2026-03-29T13:17:40Z</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/neovim/neovim/releases/tag/v0.11.7"/>
+    <title>Nvim 0.11.7</title>
+    <content type="html">&lt;div class=&quot;snippet-clipboard-content notranslate position-relative overflow-auto&quot; data-snippet-clipboard-copy-content=&quot;NVIM v0.11.7
+Build type: Release
+LuaJIT 2.1.1741730670&quot;&gt;&lt;pre class=&quot;notranslate&quot;&gt;&lt;code&gt;NVIM v0.11.7
+Build type: Release
+LuaJIT 2.1.1741730670
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Release notes&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/neovim/neovim/commit/cd90ec7cdcdc55b617dfae5317b2c24b76b4148a&quot;&gt;Changelog&lt;/a&gt; (fixes + features)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;/neovim/neovim/blob/v0.11.7/runtime/doc/news.txt&quot;&gt;News&lt;/a&gt; (&lt;code&gt;:help news&lt;/code&gt; in Nvim)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Install&lt;/h2&gt;
+&lt;h3&gt;Windows&lt;/h3&gt;
+&lt;h4&gt;Zip&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;Download &lt;strong&gt;nvim-win64.zip&lt;/strong&gt; (or &lt;strong&gt;nvim-win-arm64.zip&lt;/strong&gt; for ARM)&lt;/li&gt;
+&lt;li&gt;Extract the zip&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;nvim.exe&lt;/code&gt; in your terminal&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4&gt;MSI&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;Download &lt;strong&gt;nvim-win64.msi&lt;/strong&gt; (or &lt;strong&gt;nvim-win-arm64.msi&lt;/strong&gt; for ARM)&lt;/li&gt;
+&lt;li&gt;Run the MSI&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;nvim.exe&lt;/code&gt; in your terminal&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Note: On Windows &quot;Server&quot; you may need to &lt;a href=&quot;https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170&quot; rel=&quot;nofollow&quot;&gt;install vcruntime140.dll&lt;/a&gt;.&lt;/p&gt;
+&lt;h3&gt;macOS (x86_64)&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Download &lt;strong&gt;nvim-macos-x86_64.tar.gz&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;xattr -c ./nvim-macos-x86_64.tar.gz&lt;/code&gt; (to avoid &quot;unknown developer&quot; warning)&lt;/li&gt;
+&lt;li&gt;Extract: &lt;code&gt;tar xzvf nvim-macos-x86_64.tar.gz&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;./nvim-macos-x86_64/bin/nvim&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;macOS (arm64)&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Download &lt;strong&gt;nvim-macos-arm64.tar.gz&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;xattr -c ./nvim-macos-arm64.tar.gz&lt;/code&gt; (to avoid &quot;unknown developer&quot; warning)&lt;/li&gt;
+&lt;li&gt;Extract: &lt;code&gt;tar xzvf nvim-macos-arm64.tar.gz&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;./nvim-macos-arm64/bin/nvim&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;Linux (x86_64)&lt;/h3&gt;
+&lt;p&gt;If your system does not have the &lt;a href=&quot;https://neovim.io/doc/user/support.html#supported-platforms&quot; rel=&quot;nofollow&quot;&gt;required glibc version&lt;/a&gt;, try the (unsupported) &lt;a href=&quot;https://github.com/neovim/neovim-releases&quot;&gt;builds for older glibc&lt;/a&gt;.&lt;/p&gt;
+&lt;h4&gt;AppImage&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;Download &lt;strong&gt;nvim-linux-x86_64.appimage&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;chmod u+x nvim-linux-x86_64.appimage &amp;amp;&amp;amp; ./nvim-linux-x86_64.appimage&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;If your system does not have FUSE you can &lt;a href=&quot;https://github.com/AppImage/AppImageKit/wiki/FUSE#type-2-appimage&quot;&gt;extract the appimage&lt;/a&gt;:
+&lt;div class=&quot;snippet-clipboard-content notranslate position-relative overflow-auto&quot; data-snippet-clipboard-copy-content=&quot;./nvim-linux-x86_64.appimage --appimage-extract
+./squashfs-root/usr/bin/nvim&quot;&gt;&lt;pre class=&quot;notranslate&quot;&gt;&lt;code&gt;./nvim-linux-x86_64.appimage --appimage-extract
+./squashfs-root/usr/bin/nvim
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4&gt;Tarball&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;Download &lt;strong&gt;nvim-linux-x86_64.tar.gz&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Extract: &lt;code&gt;tar xzvf nvim-linux-x86_64.tar.gz&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;./nvim-linux-x86_64/bin/nvim&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;Linux (arm64) - Untested&lt;/h3&gt;
+&lt;h4&gt;AppImage&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;Download &lt;strong&gt;nvim-linux-arm64.appimage&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;chmod u+x nvim-linux-arm64.appimage &amp;amp;&amp;amp; ./nvim-linux-arm64.appimage&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;If your system does not have FUSE you can &lt;a href=&quot;https://github.com/AppImage/AppImageKit/wiki/FUSE#type-2-appimage&quot;&gt;extract the appimage&lt;/a&gt;:
+&lt;div class=&quot;snippet-clipboard-content notranslate position-relative overflow-auto&quot; data-snippet-clipboard-copy-content=&quot;./nvim-linux-arm64.appimage --appimage-extract
+./squashfs-root/usr/bin/nvim&quot;&gt;&lt;pre class=&quot;notranslate&quot;&gt;&lt;code&gt;./nvim-linux-arm64.appimage --appimage-extract
+./squashfs-root/usr/bin/nvim
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4&gt;Tarball&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;Download &lt;strong&gt;nvim-linux-arm64.tar.gz&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Extract: &lt;code&gt;tar xzvf nvim-linux-arm64.tar.gz&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;./nvim-linux-arm64/bin/nvim&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;Other&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Install by &lt;a href=&quot;https://github.com/neovim/neovim/blob/master/INSTALL.md#install-from-package&quot;&gt;package manager&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content>
+    <author>
+      <name>github-actions[bot]</name>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/in/15368?s=60&amp;v=4"/>
+  </entry>
+</feed>
