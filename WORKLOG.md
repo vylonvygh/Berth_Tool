@@ -100,3 +100,11 @@ Result: branch feat/phase-2-providers pushed; commits 5be9255,5381b07,224df04. 2
 Commit: 224df04
 Noticed: backend not implemented yet (stub returns not implemented) — correct for scaffold stage; next implement parsing against saved fixtures.
 Next: implement GitHub web backend using fixtures (expanded_assets HTML + atom) to keep tests offline; add fixture-based tests.
+
+### 2026-10-19 09:41 | feat/phase-2-providers | AI: opencode/big-pickle
+Intent: Add GitHub expanded_assets HTML parser using scraper + regex, with fixture test.
+Actions: implemented parser extracting name, relative download href, size (human -> bytes), sha256 digest; added test using tests/fixtures/github/fzf-expanded_assets.html; fixed clippy/fmt.
+Result: test passes; all gates green (25 total tests). Commit 790558d pushed to origin.
+Commit: 790558d
+Noticed: size extraction scans full text and assigns to first unassigned name (matches fixture structure); works for fzf fixture.
+Next: add atom feed parsing (quick-xml) and latest-tag redirect extraction; then wire into Provider methods with fixtures in unit tests.
