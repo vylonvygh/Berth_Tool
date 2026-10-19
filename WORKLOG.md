@@ -130,3 +130,6 @@ Intent: Phase 3 — asset scoring + executable discovery (pure functions, heavie
 Plan: new module crates/berth-core/src/asset.rs (Platform, hard excludes, scoring, select_asset decision, regex override, discover_executables); add Error::NoMatch; unit tests in module; gates; commit; push.
 Actions: implemented asset.rs (29 unit tests: excludes per SPEC 7.1, scoring weights as named consts, tie/threshold/margin decision, regex override that cannot bypass platform exclusion, executable discovery with skip lists); fixed 3 wrong test expectations (musl-vs-gnu is a margin win not a tie; regex cannot pick foreign arch; bin/ preference test setup); added Error::NoMatch; derived Default for SelectOpts after clippy derivable_impls.
 Result: fmt OK, clippy OK, 68 tests pass (46 unit + 4 atom + 11 web + 7 source_parsing).
+Commit: 0463e7c
+Noticed: SelectOpts.interactive is currently only meaningful to the CLI layer (picker UI lands in Phase 4); docs/providers.md open questions still unanswered.
+Next: Phase 3 report + stop for approval; then Phase 4 (download/verify/extract/install + add/remove/list).
