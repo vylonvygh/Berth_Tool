@@ -44,6 +44,9 @@ pub enum Error {
     #[error("provider error: {0}")]
     Provider(String),
 
+    #[error("no match: {0}")]
+    NoMatch(String),
+
     #[error("database error: {0}")]
     Database(#[from] rusqlite::Error),
 

@@ -124,3 +124,9 @@ Result: fmt OK, clippy OK, 39 tests pass (17 unit + 4 atom + 11 web + 7 source_p
 Commit: c5ef097
 Noticed: crates/berth-core/src/source_test.rs is an empty tracked file, not referenced by lib.rs (left in place, deletion needs approval); docs/providers.md open question 4 (feed-rs vs quick-xml) resolved in practice by using quick-xml — please confirm; GitHub prerelease detection still skips SPEC §6.1's tag-page badge (atom has no flag), prerelease=false recorded for atom-derived releases.
 Next: Phase 2 report + stop for approval; then Phase 3 (asset scoring).
+
+### 2026-10-19 10:50 | main | AI: opencode/big-pickle
+Intent: Phase 3 — asset scoring + executable discovery (pure functions, heaviest unit suite) per SPEC §7.
+Plan: new module crates/berth-core/src/asset.rs (Platform, hard excludes, scoring, select_asset decision, regex override, discover_executables); add Error::NoMatch; unit tests in module; gates; commit; push.
+Actions: implemented asset.rs (29 unit tests: excludes per SPEC 7.1, scoring weights as named consts, tie/threshold/margin decision, regex override that cannot bypass platform exclusion, executable discovery with skip lists); fixed 3 wrong test expectations (musl-vs-gnu is a margin win not a tie; regex cannot pick foreign arch; bin/ preference test setup); added Error::NoMatch; derived Default for SelectOpts after clippy derivable_impls.
+Result: fmt OK, clippy OK, 68 tests pass (46 unit + 4 atom + 11 web + 7 source_parsing).

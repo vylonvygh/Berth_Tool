@@ -1,5 +1,6 @@
 #![forbid(unsafe_code)]
 
+pub mod asset;
 pub mod config;
 pub mod db;
 pub mod error;
