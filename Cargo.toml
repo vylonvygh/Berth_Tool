@@ -1,0 +1,22 @@
+[workspace]
+resolver = "2"
+members = ["crates/berth-core", "crates/berth"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.82"
+
+[workspace.dependencies]
+berth-core = { path = "crates/berth-core" }
+anyhow = "1"
+thiserror = "2"
+serde = { version = "1", features = ["derive"] }
+toml = "1"
+directories = "6"
+rusqlite = { version = "0.40", features = ["bundled"] }
+fd-lock = "4"
+tracing = "0.1"
+tracing-subscriber = "0.3"
+tracing-appender = "0.2"
+tempfile = "3"

@@ -1,0 +1,20 @@
+[package]
+name = "berth"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+publish = false
+
+[[bin]]
+name = "berth"
+path = "src/main.rs"
+
+[dependencies]
+berth-core.workspace = true
+anyhow.workspace = true
+tracing.workspace = true
+tracing-subscriber.workspace = true
+tracing-appender.workspace = true
+
+[dev-dependencies]
+tempfile.workspace = true
