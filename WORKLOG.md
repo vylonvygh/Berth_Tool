@@ -44,3 +44,11 @@ Result: (in progress)
 Commit: 5d1b22b (bootstrap) 
 Noticed:
 Next: probe GitHub endpoints
+
+### 2026-10-19 08:24 | main | AI: opencode/big-pickle
+Intent: Phase 0 result — document endpoint research as docs/providers.md with raw fixtures.
+Actions: probed GitHub (releases/latest redirect, releases.atom + ETag/304, expanded_assets HTML, download redirect, no-releases case, tag-page prerelease badge, api.github.com digest + rate limit) and GitLab (web permalink redirect, web atom, client-side release page, public API releases + permalink, rate limits, download HEAD); saved 24 fixtures under tests/fixtures/; wrote docs/providers.md
+Result: VERIFIED live: GH latest 302 -> /tag/v0.74.5; no-releases repo still 302 -> /releases (not 404); atom If-None-Match -> 304; expanded_assets has names + relative download hrefs + sha256 + human sizes; GH download 302 -> release-assets.githubusercontent.com (HTTPS, no downgrade); GH prerelease only marked by tag-page badge; api.github.com 60/hr unauth + assets[].digest; GitLab web permalink 302 -> /-/releases/v1.123.0; GitLab release page HTML contains no asset data (must use API); GitLab API releases JSON has upcoming_release + assets.links but NO digest; GitLab unauth API 500/window
+Commit: pending
+Noticed: (1) SPEC §6.1 says prerelease via atom, but atom has no structured prerelease flag -> needs decision. (2) GitLab cannot scrape assets from HTML; proposed "web mode = public unauthenticated API (no token)" needs SPEC clarification. (3) GitLab has no asset digests -> TOFU. (4) Pruned 2 oversized probe fixtures (1.8 MB GitLab atom, 544 KB GitHub releases list page) to keep repo lean; findings retained in docs/providers.md
+Next: after approval, Phase 1 (workspace skeleton, config, XDG paths, logging, DB + migrations, process lock)
