@@ -1,0 +1,35 @@
+HTTP/2 200 
+date: Mon, 19 Oct 2026 08:19:27 GMT
+content-type: application/json
+content-length: 88389
+cf-ray: a4ce5b9ceba87e93-MAA
+cf-cache-status: BYPASS
+accept-ranges: bytes
+cache-control: max-age=0, private, must-revalidate
+etag: W/"b3abfeeec72f78ff59843ef9e1591d45"
+link: <https://gitlab.com/api/v4/projects/gitlab-org%2Fcli/releases?id=gitlab-org%2Fcli&order_by=released_at&page=2&per_page=5&sort=desc>; rel="next", <https://gitlab.com/api/v4/projects/gitlab-org%2Fcli/releases?id=gitlab-org%2Fcli&order_by=released_at&page=1&per_page=5&sort=desc>; rel="first", <https://gitlab.com/api/v4/projects/gitlab-org%2Fcli/releases?id=gitlab-org%2Fcli&order_by=released_at&page=33&per_page=5&sort=desc>; rel="last"
+server: cloudflare
+strict-transport-security: max-age=31536000
+vary: Origin
+content-security-policy: default-src 'none'
+gitlab-lb: haproxy-main-42-lb-gprd
+gitlab-sv: api-gke-us-east1-d
+nel: {"max_age": 0}
+ratelimit-limit: 500
+ratelimit-name: throttle_unauthenticated_api
+ratelimit-observed: 2
+ratelimit-remaining: 498
+ratelimit-reset: 1792398000
+referrer-policy: strict-origin-when-cross-origin
+x-content-type-options: nosniff
+x-frame-options: SAMEORIGIN
+x-gitlab-meta: {"correlation_id":"a4ce5b9ceba87e93-MAA","version":"1"}
+x-next-page: 2
+x-page: 1
+x-per-page: 5
+x-prev-page: 
+x-request-id: a4ce5b9ceba87e93-MAA
+x-runtime: 0.152031
+x-total: 162
+x-total-pages: 33
+

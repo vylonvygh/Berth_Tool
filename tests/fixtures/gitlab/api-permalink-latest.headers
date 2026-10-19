@@ -1,0 +1,27 @@
+HTTP/2 302 
+date: Mon, 19 Oct 2026 08:19:25 GMT
+content-type: text/plain
+content-length: 90
+location: /api/v4/projects/34675721/releases/v1.123.0
+cf-ray: a4ce5b91d91b7f84-MAA
+cf-cache-status: BYPASS
+cache-control: no-cache
+server: cloudflare
+strict-transport-security: max-age=31536000
+vary: Origin
+content-security-policy: default-src 'none'
+gitlab-lb: haproxy-main-30-lb-gprd
+gitlab-sv: api-gke-us-east1-d
+nel: {"max_age": 0}
+ratelimit-limit: 500
+ratelimit-name: throttle_unauthenticated_api
+ratelimit-observed: 1
+ratelimit-remaining: 499
+ratelimit-reset: 1792398000
+referrer-policy: strict-origin-when-cross-origin
+x-content-type-options: nosniff
+x-frame-options: SAMEORIGIN
+x-gitlab-meta: {"correlation_id":"a4ce5b91d91b7f84-MAA","version":"1"}
+x-request-id: a4ce5b91d91b7f84-MAA
+x-runtime: 0.105534
+
