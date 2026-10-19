@@ -3,6 +3,7 @@
 pub mod config;
 pub mod db;
 pub mod error;
+pub mod github;
 pub mod lock;
 pub mod logging;
 pub mod paths;

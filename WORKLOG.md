@@ -84,3 +84,11 @@ Result: in progress
 Commit: none yet
 Noticed: SPEC lists regex and semver in §14; all required crates appear in the approved stack. Will use url crate for parsing.
 Next: write type definitions and source parsing.
+
+### 2026-10-19 09:21 | feat/phase-2-providers | AI: opencode/big-pickle
+Intent: Add types, source parsing, Provider trait for Phase 2.
+Actions: added deps (url, regex, semver with serde, tokio, reqwest, scraper, quick-xml, sha2, hex, chrono, once_cell, async-trait); created types.rs (RepoRef, ProviderId, Version, Asset, Digest, Release, ReleaseSummary); created source.rs (accepts forms in §4.1 including @version, release/tag URLs); created provider.rs (Provider trait + ResolveOpts); added unit tests in tests/source_parsing.rs (7 cases). Fixed fmt/clippy.
+Result: cargo fmt/clippy clean; tests ok (24 total: 17+7). Commits 5be9255, 5381b07.
+Commit: 5381b07
+Noticed: parsing handles release/tag URLs by extracting owner/repo; host detection defaults to GitHub for unknown hosts (defensive) while SPEC says detect from host.
+Next: GitHub web backend (latest via redirect, atom via quick-xml, expanded_assets via scraper), fixture-based tests, then gates.
