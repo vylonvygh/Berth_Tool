@@ -92,3 +92,11 @@ Result: cargo fmt/clippy clean; tests ok (24 total: 17+7). Commits 5be9255, 5381
 Commit: 5381b07
 Noticed: parsing handles release/tag URLs by extracting owner/repo; host detection defaults to GitHub for unknown hosts (defensive) while SPEC says detect from host.
 Next: GitHub web backend (latest via redirect, atom via quick-xml, expanded_assets via scraper), fixture-based tests, then gates.
+
+### 2026-10-19 09:40 | feat/phase-2-providers | AI: opencode/big-pickle
+Intent: Scaffold GitHub web provider and push branch (user asked GitLab connected).
+Actions: added github module (web.rs stub, types.rs empty), wired into lib; pushed branch to origin (gitlab). All gates green (fmt/clippy/tests 24 total).
+Result: branch feat/phase-2-providers pushed; commits 5be9255,5381b07,224df04. 24 tests pass.
+Commit: 224df04
+Noticed: backend not implemented yet (stub returns not implemented) — correct for scaffold stage; next implement parsing against saved fixtures.
+Next: implement GitHub web backend using fixtures (expanded_assets HTML + atom) to keep tests offline; add fixture-based tests.
