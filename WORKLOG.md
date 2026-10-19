@@ -108,3 +108,11 @@ Result: test passes; all gates green (25 total tests). Commit 790558d pushed to 
 Commit: 790558d
 Noticed: size extraction scans full text and assigns to first unassigned name (matches fixture structure); works for fzf fixture.
 Next: add atom feed parsing (quick-xml) and latest-tag redirect extraction; then wire into Provider methods with fixtures in unit tests.
+
+### 2026-10-19 09:50 | main | AI: opencode/big-pickle
+Intent: merge Phase 2 work to main and push to GitLab origin.
+Actions: pushed feat/phase-2-providers, merged --no-ff into main, pushed main, deleted branch locally+remotely. Gates: fmt OK, clippy OK, 25 tests total.
+Result: main at 4328669; origin/main updated.
+Commit: 4328669
+Noticed: Phase 2 in progress (atom/latest wiring pending).
+Next: continue Phase 2 on main — atom feed parsing and latest-tag extraction against fixtures.
