@@ -31,6 +31,19 @@ pub enum Error {
     #[error("invalid configuration: {0}")]
     InvalidConfig(String),
 
+    #[error("HTTP request to {url} failed: {source}")]
+    Http {
+        url: String,
+        #[source]
+        source: reqwest::Error,
+    },
+
+    #[error("failed to parse {what}: {message}")]
+    Parse { what: String, message: String },
+
+    #[error("provider error: {0}")]
+    Provider(String),
+
     #[error("database error: {0}")]
     Database(#[from] rusqlite::Error),
 

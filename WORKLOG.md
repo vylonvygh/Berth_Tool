@@ -116,3 +116,11 @@ Result: main at 4328669; origin/main updated.
 Commit: 4328669
 Noticed: Phase 2 in progress (atom/latest wiring pending).
 Next: continue Phase 2 on main — atom feed parsing and latest-tag extraction against fixtures.
+
+### 2026-10-19 10:43 | main | AI: opencode/big-pickle
+Intent: complete Phase 2 — GitHub web backend (atom parsing, latest redirect, Provider wiring) tested against saved fixtures + wiremock.
+Actions: rewrote crates/berth-core/src/github/web.rs (parse_expanded_assets with per-row size/digest/published via clipboard-copy aria-label, parse_atom with quick-xml incl. unclosed-entry detection, latest_tag_from_location, version_from_tag, percent-decoded tags, rows_to_assets, summary_from_entry); wired Provider::latest/release/list_releases over reqwest with https-only redirect policy (loopback http allowed for wiremock tests); added Error::{Http,Parse,Provider}; AssetRow gained published; added wiremock 0.6.5 dev-dep (already mandated by SPEC §14/§tests); tests: github_web.rs (11) + github_atom.rs (4) incl. 3 wiremock HTTP-flow tests. Fixed 3 test failures: wrong size expectation (linux_amd64 is 2.18 MB), releases-without-tag path error wording, missing tag-page mock.
+Result: fmt OK, clippy OK, 39 tests pass (17 unit + 4 atom + 11 web + 7 source_parsing).
+Commit: pending
+Noticed: crates/berth-core/src/source_test.rs is an empty tracked file, not referenced by lib.rs (left in place, deletion needs approval); docs/providers.md open question 4 (feed-rs vs quick-xml) resolved in practice by using quick-xml — please confirm; GitHub prerelease detection still skips SPEC §6.1's tag-page badge (atom has no flag), prerelease=false recorded for atom-derived releases.
+Next: Phase 2 report + stop for approval; then Phase 3 (asset scoring).
